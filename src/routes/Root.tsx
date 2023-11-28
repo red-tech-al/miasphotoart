@@ -6,7 +6,9 @@ export default function Root() {
     <>
       <Layout>
         <main className={styles.main}>
-          Root Page
+          <section className={styles.heroSection}>
+            Root
+          </section>
         </main>
       </Layout>
     </>
