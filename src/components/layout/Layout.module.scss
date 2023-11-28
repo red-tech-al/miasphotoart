@@ -29,7 +29,8 @@
   transition: transform, background-color;
   transition-timing-function: ease;
   transition-duration: 400ms;
-  animation: fadeIn 1.2s forwards ease;
+  animation-name: fadeIn;
+  animation-duration: 800ms;
 }
 
 .icon {
@@ -38,7 +39,7 @@
   top: 50%;
   transform: translate(-50%, -50%) scale(0.9);
   color: rgb(225, 213, 189);
-  font-size: 2rem;
+  font-size: 2.1rem;
   opacity: 0;
   transition: transform, opacity;
   transition-timing-function: ease;
@@ -64,6 +65,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 2vw;
   padding-inline: 0.75rem;
   transform: translateY(120%) scale(0.9);
@@ -76,10 +78,10 @@
 }
 
 .navImage {
-  width: max(20vw, 420px);
+  width: max(18vw, 420px);
   aspect-ratio: 1.8 / 1;
   object-fit: cover;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
 }
 
 .navLinkText {
@@ -90,11 +92,11 @@
 
 @keyframes fadeIn {
   0% {
-    transform: scale(0.1);
+    scale: 0.1;
     opacity: 0;
   }
   100% {
-    transform: scale(1);
+    scale: 1;
     opacity: 1;
   }
 }
