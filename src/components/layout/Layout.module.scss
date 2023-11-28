@@ -1,0 +1,100 @@
+.content {
+  transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+}
+
+.nav {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navToggle {
+  height: 5rem;
+  width: 5rem;
+  position: fixed;
+  z-index: 3;
+  left: 50%;
+  bottom: 3rem;
+  transform: translateX(-50%);
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(91, 105, 134);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform, background-color;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+  animation: fadeIn 1.2s forwards ease;
+}
+
+.icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  color: rgb(225, 213, 189);
+  font-size: 2rem;
+  opacity: 0;
+  transition: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+}
+
+.navToggle:hover {
+  transform: translateX(-50%) scale(1.04);
+  .icon {
+    opacity: 1;
+  }
+}
+
+.navToggle:active {
+  transform: translateX(-50%) scale(0.96);
+}
+
+.navLinksContainer {
+  background-color: rgb(32, 25, 16);
+  color: rgb(241, 235, 223);
+  height: 35vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2vw;
+  padding-inline: 0.75rem;
+  transform: translateY(120%) scale(0.9);
+  transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+}
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+}
+
+.navImage {
+  width: max(20vw, 420px);
+  aspect-ratio: 1.8 / 1;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.navLinkText {
+  font-size: 1.25rem;
+  margin-block: 0.75rem;
+  text-transform: uppercase;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
