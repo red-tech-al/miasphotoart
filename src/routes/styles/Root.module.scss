@@ -11,4 +11,11 @@
   justify-content: center;
   position: relative;
   z-index: 2;
+  overflow: hidden;
+}
+
+.image {
+  width: 50vmin;
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
