@@ -6,20 +6,9 @@ export default function Root() {
     <>
       <Layout>
         <main className={styles.main}>
-          <style>
-            {
-              `
-                .image[data-status="active"] {
-                  display: block;
-                }
-
-                .image[data-status="inactive"] {
-                  display: none;
-                }
-              `
-            }
-          </style>
-          <section className={styles.heroSection}></section>
+          <section className={styles.heroSection}>
+            Root
+          </section>
         </main>
       </Layout>
     </>
