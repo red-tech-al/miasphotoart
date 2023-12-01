@@ -8,11 +8,17 @@ import {
 import Root from "./routes/Root";
 import ErrorPage from './ErrorPage';
 
+import Shop from './routes/Shop';
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/shop",
+    element: <Shop />,
   }
 ]);
 
