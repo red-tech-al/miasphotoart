@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Layout.module.scss";
 
 import { IoAlbumsOutline, IoClose } from "react-icons/io5";
 
 export default function Layout({ children }) {
+  const location = useLocation().pathname;
 
   const [isOpenNav, setIsOpenNav] = React.useState("false");
 
@@ -22,33 +23,39 @@ export default function Layout({ children }) {
       </section>
       <section className={styles.nav}>
         <div className={styles.navLinksContainer} style={{ transform: `translateY(${(isOpenNav === "false") ? "120%" : "0%"}) scale(${(isOpenNav === "false") ? "0" : "1"})`, height: `${(isOpenNav === "false") ? "0vh" : "45vh"}` }}>
-          <Link to="/" style={{ color: "inherit", textDecoration: "none" }} className={styles.navLink}>
+          <Link to="/" className={styles.navLink}>
             <text className={styles.navLinkText}>Home</text>
             <div className={styles.navImage} />
           </Link>
-          <Link to="/" style={{ color: "inherit", textDecoration: "none" }} className={styles.navLink}>
+          <Link to="/" className={styles.navLink}>
             <text className={styles.navLinkText}>Portfolio</text>
             <div className={styles.navImage} />
           </Link>
-          <Link to="/" style={{ color: "inherit", textDecoration: "none" }} className={styles.navLink}>
+          <Link to="/" className={styles.navLink}>
             <text className={styles.navLinkText}>Pricing</text>
             <div className={styles.navImage} />
           </Link>
-          <Link to="/" style={{ color: "inherit", textDecoration: "none" }} className={styles.navLink}>
+          <Link to="/" className={styles.navLink}>
             <text className={styles.navLinkText}>Videography</text>
             <div className={styles.navImage} />
           </Link>
-          <Link to="/" style={{ color: "inherit", textDecoration: "none" }} className={styles.navLink}>
+          <Link to="/" className={styles.navLink}>
             <text className={styles.navLinkText}>Shop</text>
             <div className={styles.navImage} />
           </Link>
-          <Link to="/" style={{ color: "inherit", textDecoration: "none" }} className={styles.navLink}>
+          <Link to="/" className={styles.navLink}>
             <text className={styles.navLinkText}>About</text>
             <div className={styles.navImage} />
           </Link>
         </div>
       </section>
-      <section className={styles.footer}></section>
+      {
+        (location === "/")
+          ?
+          <div style={{ display: "none" }}></div>
+          :
+          <section className={styles.footer}></section>
+      }
     </main>
   );
 }
