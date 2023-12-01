@@ -23,27 +23,27 @@ export default function Layout({ children }) {
       </section>
       <section className={styles.nav}>
         <div className={styles.navLinksContainer} style={{ transform: `translateY(${(isOpenNav === "false") ? "120%" : "0%"}) scale(${(isOpenNav === "false") ? "0" : "1"})`, height: `${(isOpenNav === "false") ? "0vh" : "45vh"}` }}>
-          <Link to="/" className={styles.navLink}>
+          <Link to="/" className={styles.navLink} onClick={() => toggleNav()}>
             <text className={styles.navLinkText}>Home</text>
             <div className={styles.navImage} />
           </Link>
-          <Link to="/" className={styles.navLink}>
+          <Link to="/" className={styles.navLink} onClick={() => toggleNav()}>
             <text className={styles.navLinkText}>Portfolio</text>
             <div className={styles.navImage} />
           </Link>
-          <Link to="/" className={styles.navLink}>
+          <Link to="/" className={styles.navLink} onClick={() => toggleNav()}>
             <text className={styles.navLinkText}>Pricing</text>
             <div className={styles.navImage} />
           </Link>
-          <Link to="/" className={styles.navLink}>
+          <Link to="/" className={styles.navLink} onClick={() => toggleNav()}>
             <text className={styles.navLinkText}>Videography</text>
             <div className={styles.navImage} />
           </Link>
-          <Link to="/" className={styles.navLink}>
+          <Link to="/shop" className={styles.navLink} onClick={() => toggleNav()}>
             <text className={styles.navLinkText}>Shop</text>
             <div className={styles.navImage} />
           </Link>
-          <Link to="/" className={styles.navLink}>
+          <Link to="/" className={styles.navLink} onClick={() => toggleNav()}>
             <text className={styles.navLinkText}>About</text>
             <div className={styles.navImage} />
           </Link>
@@ -54,7 +54,19 @@ export default function Layout({ children }) {
           ?
           <div style={{ display: "none" }}></div>
           :
-          <section className={styles.footer}></section>
+          <section className={styles.footer}>
+            <div className={styles.footerLeftContainer}>
+              <text className={styles.copyrightText}>© Copyright Mias Photoart</text>
+            </div>
+            <div className={styles.footerRightContainer}>
+              <Link to="/" className={styles.footerLink}>
+                <text className={styles.footerLinkText}>Contact</text>
+              </Link>
+              <Link to="/" className={styles.footerLink}>
+                <text className={styles.footerLinkText}>Imprint</text>
+              </Link>
+            </div>
+          </section>
       }
     </main>
   );
