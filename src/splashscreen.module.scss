@@ -1,0 +1,39 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(91, 105, 134);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-delay: 3s;
+}
+
+.logo {
+  width: 15%;
+  aspect-ratio: 1;
+  animation-name: zoom;
+  animation-duration: 3.8s;
+}
+
+@keyframes zoom {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 20%;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
