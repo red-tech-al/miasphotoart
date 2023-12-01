@@ -14,18 +14,23 @@
 }
 
 .logo {
-  width: 15%;
+  width: 20%;
   aspect-ratio: 1;
   animation-name: zoom;
-  animation-duration: 3.8s;
+  animation-duration: 3s;
+  position: absolute;
+  color: rgb(241, 235, 223);
 }
 
 @keyframes zoom {
   0% {
     width: 0%;
+    top: -20%;
   }
   100% {
     width: 20%;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
