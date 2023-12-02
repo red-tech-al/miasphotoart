@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./styles/Contact.module.scss";
 import Layout from "../components/layout/Layout";
 
+import ContactImage from "../assets/images/contact_image.jpeg";
+
 export default function Contact() {
 
   const [fname, setFname] = React.useState("");
@@ -33,7 +35,23 @@ export default function Contact() {
             </div>
           </form>
         </div>
-        <div className={styles.rightContainer}></div>
+        <div className={styles.rightContainer}>
+          <div className={styles.topContainer}>
+            <img alt='contact' src={ContactImage} className={styles.image} />
+          </div>
+          <div className={styles.bottomContainer}>
+            <div className={styles.officeLocation}>
+              <text className={styles.officeLocationText}>Graz - Head Office</text>
+              <text className={styles.contactDetails}><span className={styles.bold}>Email:</span> info@miasphotoart.at</text>
+              <text className={styles.contactDetails}><span className={styles.bold}>Phone:</span> +43 664 2072501</text>
+            </div>
+            <div className={styles.officeLocation} style={{ textAlign: "right", alignItems: "flex-end" }}>
+              <text className={styles.officeLocationText}>Klagenfurt</text>
+              <text className={styles.contactDetails}><span className={styles.bold}>Email:</span> klagenfurt@miasphotoart.at</text>
+              <text className={styles.contactDetails}><span className={styles.bold}>Phone:</span> +43 664 2072501</text>
+            </div>
+          </div>
+        </div>
       </main>
     </Layout>
   );
