@@ -11,6 +11,7 @@ import ErrorPage from './ErrorPage';
 import SplashScreen from './splashscreen';
 
 import Shop from './routes/Shop';
+import Contact from './routes/Contact';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,11 @@ const router = createBrowserRouter([
   {
     path: "/shop",
     element: <Shop />,
-  }
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
 ]);
 
 const App = () => {
