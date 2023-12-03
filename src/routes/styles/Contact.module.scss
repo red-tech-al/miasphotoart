@@ -5,7 +5,8 @@
 .main {
   width: 95%;
   margin-inline: 2.5%;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -90,6 +91,13 @@
   justify-content: center;
 }
 
+.topContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .image {
   width: 60%;
   aspect-ratio: 1;
@@ -126,4 +134,30 @@
 
 .contactDetails {
   margin-bottom: 0.5vh;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    width: 97%;
+    margin-inline: 1.5%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7.5vh;
+  }
+
+  .leftContainer,
+  .rightContainer {
+    width: 100%;
+  }
+
+  .contactForm {
+    width: 100%;
+    gap: 3vh;
+  }
+
+  .bottomContainer {
+    width: 100%;
+    margin-inline: 0%;
+  }
 }
