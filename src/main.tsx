@@ -10,6 +10,7 @@ import Root from "./routes/Root";
 import ErrorPage from './ErrorPage';
 import SplashScreen from './splashscreen';
 
+import Pricing from './routes/Pricing';
 import Portfolio from './routes/Portfolio';
 import Shop from './routes/Shop';
 import Contact from './routes/Contact';
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/pricing",
+    element: <Pricing />,
   },
   {
     path: "/portfolio",

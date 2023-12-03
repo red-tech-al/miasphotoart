@@ -4,7 +4,7 @@
 
 .nav {
   z-index: 1;
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
 
@@ -82,7 +82,7 @@
 }
 
 .navImage {
-  background-image: url("https://source.unsplash.com/1440x2560");
+  background-image: url("../../assets/images/pricing.png");
   width: max(18vw, 380px);
   aspect-ratio: 1.8 / 1;
   background-size: 107.5%;

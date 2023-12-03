@@ -18,7 +18,7 @@ export default function Layout({ children }) {
       <button className={styles.navToggle} onClick={() => toggleNav()} style={{ backgroundColor: `rgb(${(isOpenNav === "false") ? "91, 105, 134" : "225, 213, 189"})` }}>
         {(isOpenNav === "false") ? <IoAlbumsOutline className={styles.icon} style={{ color: "rgb(241, 235, 223)" }} /> : <IoClose className={styles.icon} style={{ color: "rgb(32, 25, 16)" }} />}
       </button>
-      <section className={styles.content} style={{ transform: `translateY(${(isOpenNav === "false") ? "0%" : "-45%"})` }} onClick={() => setIsOpenNav("false")}>
+      <section className={styles.content} style={{ transform: `translateY(${(isOpenNav === "false") ? "0vh" : "-45vh"})` }} onClick={() => setIsOpenNav("false")}>
         {children}
       </section>
       <section className={styles.nav}>
@@ -31,7 +31,7 @@ export default function Layout({ children }) {
             <text className={styles.navLinkText}>Portfolio</text>
             <div className={styles.navImage} />
           </Link>
-          <Link to="/" className={styles.navLink} onClick={() => toggleNav()}>
+          <Link to="/pricing" className={styles.navLink} onClick={() => toggleNav()}>
             <text className={styles.navLinkText}>Pricing</text>
             <div className={styles.navImage} />
           </Link>
