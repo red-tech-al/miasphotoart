@@ -19,7 +19,7 @@ export default function Pricing() {
         <section className={styles.section} id="families">
           <div className={styles.leftContainer}>
             <div className={styles.titleContainer}>
-              <text className={styles.title}>Families & Couples</text>
+              <text className={styles.title}>Families<br />& Couples</text>
               <text className={styles.subtitle}>Starting from €149</text>
             </div>
             <text className={styles.body}>
@@ -30,14 +30,18 @@ export default function Pricing() {
             </div>
           </div>
           <div className={styles.rightContainer}>
-            {/* Image Carousel Here (see notes) */}
+            <div className={styles.sectionImage}></div>
+            <div className={styles.sectionImage}></div>
+            <div className={styles.sectionImage}></div>
           </div>
         </section>
         <section className={styles.section} id="weddings">
           <div className={`${styles.leftContainer} ${styles.reverseLeftContainer}`}>
-            {/* Image Carousel Here (see notes) */}
+            <div className={styles.sectionImage}></div>
+            <div className={styles.sectionImage}></div>
+            <div className={styles.sectionImage}></div>
           </div>
-          <div className={`${styles.rightContainer} ${styles.reverseRightContainer}`}>
+          <div className={styles.reverseRightContainer}>
             <div className={styles.titleContainer}>
               <text className={styles.title}>Weddings</text>
               <text className={styles.subtitle}>Starting from €149</text>
@@ -53,7 +57,7 @@ export default function Pricing() {
         <section className={styles.section} id="families">
           <div className={styles.leftContainer}>
             <div className={styles.titleContainer}>
-              <text className={styles.title}>Personal Coaching</text>
+              <text className={styles.title}>Personal<br />Coaching</text>
               <text className={styles.subtitle}>Starting from €149</text>
             </div>
             <text className={styles.body}>
@@ -64,7 +68,9 @@ export default function Pricing() {
             </div>
           </div>
           <div className={styles.rightContainer}>
-            {/* Image Carousel Here (see notes) */}
+            <div className={styles.sectionImage}></div>
+            <div className={styles.sectionImage}></div>
+            <div className={styles.sectionImage}></div>
           </div>
         </section>
       </main>

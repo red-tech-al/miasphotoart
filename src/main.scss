@@ -18,3 +18,13 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+::-moz-selection {
+  color: rgb(241, 235, 223);
+  background: rgb(91, 105, 134);
+}
+
+::selection {
+  color: rgb(241, 235, 223);
+  background: rgb(91, 105, 134);
+}
