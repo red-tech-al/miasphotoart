@@ -1,7 +1,97 @@
 .main {
   width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroSection {
+  width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-image: url("https://source.unsplash.com/random");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+.heroText {
+  font-weight: 900;
+  color: rgb(241, 235, 223);
+  font-weight: 900;
+  font-size: max(0.5em, min(5em, calc(100vw * 4 / 75)));
+  text-align: center;
+}
+
+.sectionTitle {
+  font-weight: 900;
+  font-size: max(0.5em, min(5em, calc(100vw * 4 / 75)));
+  line-height: 1;
+}
+
+.bestSellersSection {
+  width: 95%;
+  padding-inline: 2.5%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7.5vh;
+  // background-color: rgb(91, 105, 134);
+  // background-color: rgb(32, 25, 16);
+  // color: rgb(241, 235, 223);
+}
+
+.bestSellersContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+}
+
+.product {
+  width: 100%;
+}
+
+.productImage {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.productTextContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.productTitle {
+  width: 50%;
+  font-weight: 900;
+  font-size: max(0.15em, min(1.5em, calc(100vw * 4 / 75)));
+  line-height: 1.2;
+}
+
+.productPrice {
+  width: 48%;
+  font-weight: 800;
+  font-size: max(0.1225em, min(1.225em, calc(100vw * 4 / 75)));
+  text-align: right;
+  opacity: 0.56;
+}
+
+.products {
+  width: 95%;
+  padding-inline: 2.5%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  flex-wrap: wrap;
 }

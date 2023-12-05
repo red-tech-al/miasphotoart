@@ -47,14 +47,14 @@
 }
 
 .navToggle:hover {
-  transform: translateX(-50%) scale(1.04);
+  transform: translateX(-50%) scale(1.075);
   .icon {
     opacity: 1;
   }
 }
 
 .navToggle:active {
-  transform: translateX(-50%) scale(0.9);
+  transform: translateX(-50%) scale(0.75);
 }
 
 .navLinksContainer {
