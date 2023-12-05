@@ -106,9 +106,11 @@
 @keyframes fadeIn {
   0% {
     transform: translateX(-50%) scale(0);
+    bottom: -10rem;
   }
   100% {
     transform: translateX(-50%) scale(1);
+    bottom: 3rem;
   }
 }
 
