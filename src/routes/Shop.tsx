@@ -38,48 +38,48 @@ export default function Shop() {
     );
   }
 
-  const products = [
-    {
-      title: "Eternity",
-      basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
-    },
-    {
-      title: "Mindful Photo Coaching",
-      basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
-    },
-    {
-      title: "Eternity",
-      basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
-    },
-    {
-      title: "Eternity",
-      basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
-    },
-    {
-      title: "Mindful Photo Coaching",
-      basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
-    },
-    {
-      title: "Eternity",
-      basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
-    },
-    {
-      title: "Eternity",
-      basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
-    },
-    {
-      title: "Mindful Photo Coaching",
-      basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
-    },
-  ]
+  // const products = [
+  //   {
+  //     title: "Eternity",
+  //     basePrice: "€130.00",
+  //     imageUrl: "https://source.unsplash.com/1440x1440",
+  //   },
+  //   {
+  //     title: "Mindful Photo Coaching",
+  //     basePrice: "€130.00",
+  //     imageUrl: "https://source.unsplash.com/1440x1440",
+  //   },
+  //   {
+  //     title: "Eternity",
+  //     basePrice: "€130.00",
+  //     imageUrl: "https://source.unsplash.com/1440x1440",
+  //   },
+  //   {
+  //     title: "Eternity",
+  //     basePrice: "€130.00",
+  //     imageUrl: "https://source.unsplash.com/1440x1440",
+  //   },
+  //   {
+  //     title: "Mindful Photo Coaching",
+  //     basePrice: "€130.00",
+  //     imageUrl: "https://source.unsplash.com/1440x1440",
+  //   },
+  //   {
+  //     title: "Eternity",
+  //     basePrice: "€130.00",
+  //     imageUrl: "https://source.unsplash.com/1440x1440",
+  //   },
+  //   {
+  //     title: "Eternity",
+  //     basePrice: "€130.00",
+  //     imageUrl: "https://source.unsplash.com/1440x1440",
+  //   },
+  //   {
+  //     title: "Mindful Photo Coaching",
+  //     basePrice: "€130.00",
+  //     imageUrl: "https://source.unsplash.com/1440x1440",
+  //   },
+  // ]
 
   return (
     <Layout>
@@ -87,6 +87,17 @@ export default function Shop() {
         <main className={styles.main}>
           <section className={styles.heroSection}>
             <text className={styles.heroText}>Shop</text>
+          </section>
+          <section className={styles.openProduct}>
+            <div className={styles.openProductLeftContainer}>
+              <img src={"https://source.unsplash.com/1440x1440"} className={styles.openProductImage} alt={"leftImage"} />
+            </div>
+            <div className={styles.openProductRightContainer}>
+              <div className={styles.openProductTitleContainer}>
+                <text className={styles.openProductTitle}>Eternity</text>
+                <text className={styles.openProductSubtitle}>€130 (VAT Incl., Shipping Costs Excl.)</text>
+              </div>
+            </div>
           </section>
           <section className={styles.bestSellersSection}>
             <text className={styles.sectionTitle}>Best Sellers</text>

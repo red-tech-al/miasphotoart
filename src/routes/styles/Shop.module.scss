@@ -34,6 +34,50 @@
   line-height: 1;
 }
 
+.openProduct {
+  width: 95%;
+  padding-inline: 2.5%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3vw;
+}
+
+.openProductLeftContainer,
+.openProductRightContainer {
+  width: 50%;
+}
+
+.openProductImage {
+  width: 100%;
+}
+
+.openProductRightContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.openProductTitleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.openProductTitle {
+  font-weight: 900;
+  font-size: max(0.5em, min(5em, calc(100vw * 4 / 75)));
+  line-height: 1;
+  margin-bottom: 0.5vh;
+}
+
+.openProductSubtitle {
+  font-weight: 800;
+  font-size: max(0.15em, min(1.5em, calc(100vw * 4 / 75)));
+  opacity: 0.56;
+}
+
 .bestSellersSection {
   width: 95%;
   padding-inline: 2.5%;
