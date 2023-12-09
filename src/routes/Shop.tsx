@@ -5,7 +5,7 @@ import Layout from "../components/layout/Layout";
 import { Fade } from "react-reveal";
 import config from 'react-reveal/globals';
 
-import { IoCaretDown, IoCart } from "react-icons/io5";
+import { IoCart, IoCaretDown } from "react-icons/io5";
 
 export default function Shop() {
 
@@ -160,7 +160,11 @@ export default function Shop() {
               </div>
               <div className={styles.openProductButtonsContainer}>
                 <div className={styles.sizeButton}>
-                  <text className={styles.sizeButtonText}>Size</text>
+                  <select className={styles.sizeSelect}>
+                    <option value="0">Size</option>
+                    <option value="150">150</option>
+                    <option value="150">150</option>
+                  </select>
                   <IoCaretDown size={25} />
                 </div>
                 <div className={styles.twoButtonContainer}>

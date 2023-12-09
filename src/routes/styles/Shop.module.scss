@@ -15,8 +15,8 @@
   justify-content: center;
 
   background-image: url("https://source.unsplash.com/random");
-  background-position: center;
-  background-size: 100%;
+  background-position: center center;
+  background-size: cover;
   background-repeat: no-repeat;
   object-fit: cover;
 }
@@ -62,11 +62,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .openProductTitleContainer {
   display: flex;
   flex-direction: column;
+  text-align: right;
+  align-items: flex-end;
 }
 
 .openProductTitle {
@@ -85,18 +88,20 @@
 
 .openProductDescriptionContainer {
   width: 64%;
+  text-align: right;
 }
 
 .openProductDescription {
   font-weight: 500;
   font-size: max(0.135em, min(1.35em, calc(100vw * 4 / 75)));
   line-height: 1.75;
+  text-align: right;
 }
 
 .openProductCategoriesContainer {
   display: flex;
   flex-direction: row;
-  gap: 1.25vw;
+  gap: 0.75vw;
   flex-wrap: wrap;
 }
 
@@ -127,15 +132,29 @@
   align-items: center;
   justify-content: space-between;
   padding-block: 1vh;
-  padding-inline: 1.75vw;
+  padding-inline: 1.5vw;
   border-radius: 10px;
   border: 3.2px solid rgb(32, 25, 16);
   cursor: pointer;
 }
 
-.sizeButtonText {
+.sizeSelect {
+  background-color: transparent;
+  color: rgb(32, 25, 16);
+  border: none;
+  outline: none;
   font-weight: 800;
   font-size: max(0.135em, min(1.35em, calc(100vw * 4 / 75)));
+  padding-inline: 0;
+  margin-inline: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .twoButtonContainer {
@@ -186,7 +205,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.8vw;
+  width: 100%;
+  justify-content: space-between;
   font-weight: 800;
   font-size: max(0.135em, min(1.35em, calc(100vw * 4 / 75)));
   color: rgb(241, 235, 223);
