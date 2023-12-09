@@ -231,9 +231,9 @@ select {
   gap: 5%;
 }
 
-.product {
-  width: 100%;
-}
+// .product {
+//   width: 100%;
+// }
 
 .productImage {
   width: 100%;
@@ -266,7 +266,8 @@ select {
 .products {
   width: 95%;
   padding-inline: 2.5%;
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
   display: flex;
   flex-direction: row;
   gap: 5%;

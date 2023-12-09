@@ -62,7 +62,7 @@ export default function Shop() {
     },
   ]
 
-  const Product = (props) => {
+  const Product = (props: any) => {
     return (
       <div className={styles.product}>
         <img src={props.imageUrl} alt={props.title} className={styles.productImage} />
@@ -74,7 +74,7 @@ export default function Shop() {
     );
   }
 
-  const Category = (props) => {
+  const Category = (props: any) => {
     return (
       <div className={styles.category}>
         <text className={styles.categoryText}>{props.title}</text>
@@ -82,48 +82,48 @@ export default function Shop() {
     );
   }
 
-  // const products = [
-  //   {
-  //     title: "Eternity",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Mindful Photo Coaching",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Eternity",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Eternity",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Mindful Photo Coaching",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Eternity",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Eternity",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Mindful Photo Coaching",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  // ]
+  const products = [
+    {
+      title: "Eternity",
+      basePrice: "€130.00",
+      imageUrl: "https://source.unsplash.com/1440x1440",
+    },
+    {
+      title: "Mindful Photo Coaching",
+      basePrice: "€130.00",
+      imageUrl: "https://source.unsplash.com/1440x1440",
+    },
+    {
+      title: "Eternity",
+      basePrice: "€130.00",
+      imageUrl: "https://source.unsplash.com/1440x1440",
+    },
+    {
+      title: "Eternity",
+      basePrice: "€130.00",
+      imageUrl: "https://source.unsplash.com/1440x1440",
+    },
+    {
+      title: "Mindful Photo Coaching",
+      basePrice: "€130.00",
+      imageUrl: "https://source.unsplash.com/1440x1440",
+    },
+    {
+      title: "Eternity",
+      basePrice: "€130.00",
+      imageUrl: "https://source.unsplash.com/1440x1440",
+    },
+    {
+      title: "Eternity",
+      basePrice: "€130.00",
+      imageUrl: "https://source.unsplash.com/1440x1440",
+    },
+    {
+      title: "Mindful Photo Coaching",
+      basePrice: "€130.00",
+      imageUrl: "https://source.unsplash.com/1440x1440",
+    },
+  ]
 
   const [quantity, setQuantity] = React.useState(0);
 
@@ -197,13 +197,13 @@ export default function Shop() {
               })}
             </div>
           </section>
-          {/* <section className={styles.products}>
+          <section className={styles.products}>
             {products.map((product, i) => {
               return (
                 <Product key={i} title={product.title} basePrice={product.basePrice} imageUrl={product.imageUrl} />
               )
             })}
-          </section> */}
+          </section>
         </main>
       </Fade>
     </Layout>
