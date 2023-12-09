@@ -1,8 +1,11 @@
+import React from "react";
 import styles from "./styles/Shop.module.scss";
 import Layout from "../components/layout/Layout";
 
 import { Fade } from "react-reveal";
 import config from 'react-reveal/globals';
+
+import { IoCaretDown, IoCart } from "react-icons/io5";
 
 export default function Shop() {
 
@@ -13,16 +16,49 @@ export default function Shop() {
       title: "Eternity",
       basePrice: "€130.00",
       imageUrl: "https://source.unsplash.com/1440x1440",
+      categories: [
+        {
+          title: "Landscape",
+        },
+        {
+          title: "Nature",
+        },
+        {
+          title: "Canvas",
+        },
+      ]
     },
     {
       title: "Mindful Photo Coaching",
       basePrice: "€130.00",
       imageUrl: "https://source.unsplash.com/1440x1440",
+      categories: [
+        {
+          title: "Landscape",
+        },
+        {
+          title: "Nature",
+        },
+        {
+          title: "Canvas",
+        },
+      ]
     },
     {
       title: "Eternity",
       basePrice: "€130.00",
       imageUrl: "https://source.unsplash.com/1440x1440",
+      categories: [
+        {
+          title: "Landscape",
+        },
+        {
+          title: "Nature",
+        },
+        {
+          title: "Canvas",
+        },
+      ]
     },
   ]
 
@@ -34,6 +70,14 @@ export default function Shop() {
           <text className={styles.productTitle}>{props.title}</text>
           <text className={styles.productPrice}>From {props.basePrice}</text>
         </div>
+      </div>
+    );
+  }
+
+  const Category = (props) => {
+    return (
+      <div className={styles.category}>
+        <text className={styles.categoryText}>{props.title}</text>
       </div>
     );
   }
@@ -81,6 +125,20 @@ export default function Shop() {
   //   },
   // ]
 
+  const [quantity, setQuantity] = React.useState(0);
+
+  const quantityDecrease = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }
+  }
+
+  const quantityIncrease = () => {
+    if (quantity < 200) {
+      setQuantity(quantity + 1);
+    }
+  }
+
   return (
     <Layout>
       <Fade ssrFadeout duration={420}>
@@ -90,12 +148,38 @@ export default function Shop() {
           </section>
           <section className={styles.openProduct}>
             <div className={styles.openProductLeftContainer}>
-              <img src={"https://source.unsplash.com/1440x1440"} className={styles.openProductImage} alt={"leftImage"} />
+              <img src={"https://source.unsplash.com/1441x1441"} className={styles.openProductImage} alt={"leftImage"} />
             </div>
             <div className={styles.openProductRightContainer}>
               <div className={styles.openProductTitleContainer}>
                 <text className={styles.openProductTitle}>Eternity</text>
                 <text className={styles.openProductSubtitle}>€130 (VAT Incl., Shipping Costs Excl.)</text>
+                <div className={styles.openProductDescriptionContainer}>
+                  <text className={styles.openProductDescription}>Old Alpine House, Austria. Exclusively limited to a collection of 200 meticulously crafted pieces, each one bearing a unique hand-signed signature, adding a touch of individuality and exclusivity to every item.</text>
+                </div>
+              </div>
+              <div className={styles.openProductButtonsContainer}>
+                <div className={styles.sizeButton}>
+                  <text className={styles.sizeButtonText}>Size</text>
+                  <IoCaretDown size={25} />
+                </div>
+                <div className={styles.twoButtonContainer}>
+                  <div className={styles.quantityButton}>
+                    <text className={styles.toggle} onClick={quantityDecrease}>-</text>
+                    <text className={styles.quantityButtonText}>{quantity || "Quantity"}</text>
+                    <text className={styles.toggle} onClick={quantityIncrease}>+</text>
+                  </div>
+                  <div className={styles.cartButton}>
+                    <text className={styles.cartButtonText}>Add To Cart <IoCart size={24} /></text>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.openProductCategoriesContainer}>
+                {bestSellers[0].categories.map((openProduct, i) => {
+                  return (
+                    <Category title={openProduct.title} key={i} />
+                  )
+                })}
               </div>
             </div>
           </section>

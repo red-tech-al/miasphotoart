@@ -47,14 +47,18 @@
 
 .openProductLeftContainer,
 .openProductRightContainer {
+  flex: 1;
   width: 50%;
+  aspect-ratio: 1;
 }
 
 .openProductImage {
   width: 100%;
+  aspect-ratio: 1;
 }
 
 .openProductRightContainer {
+  flex: 0.95;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -68,14 +72,124 @@
 .openProductTitle {
   font-weight: 900;
   font-size: max(0.5em, min(5em, calc(100vw * 4 / 75)));
-  line-height: 1;
-  margin-bottom: 0.5vh;
+  line-height: 0.75;
+  margin-bottom: 2vh;
 }
 
 .openProductSubtitle {
   font-weight: 800;
   font-size: max(0.15em, min(1.5em, calc(100vw * 4 / 75)));
   opacity: 0.56;
+  margin-bottom: 4.5vh;
+}
+
+.openProductDescriptionContainer {
+  width: 64%;
+}
+
+.openProductDescription {
+  font-weight: 500;
+  font-size: max(0.135em, min(1.35em, calc(100vw * 4 / 75)));
+  line-height: 1.75;
+}
+
+.openProductCategoriesContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25vw;
+  flex-wrap: wrap;
+}
+
+.category {
+  width: fit-content;
+  border-radius: 50px;
+  background-color: rgb(32, 25, 16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 1vh;
+  padding-inline: 1.75vw;
+  color: rgb(241, 235, 223);
+  font-weight: 600;
+}
+
+.openProductButtonsContainer {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25vw;
+}
+
+.sizeButton {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1vh;
+  padding-inline: 1.75vw;
+  border-radius: 10px;
+  border: 3.2px solid rgb(32, 25, 16);
+  cursor: pointer;
+}
+
+.sizeButtonText {
+  font-weight: 800;
+  font-size: max(0.135em, min(1.35em, calc(100vw * 4 / 75)));
+}
+
+.twoButtonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25vw;
+}
+
+.quantityButton {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1vh;
+  padding-inline: 1.75vw;
+  border-radius: 10px;
+  border: 3.2px solid rgb(32, 25, 16);
+}
+
+.quantityButtonText,
+.toggle {
+  font-weight: 800;
+  font-size: max(0.135em, min(1.35em, calc(100vw * 4 / 75)));
+}
+
+.toggle {
+  cursor: pointer;
+}
+
+.cartButton {
+  flex: 1;
+  cursor: pointer;
+  background-color: rgb(32, 25, 16);
+  width: fit-content;
+  padding-block: 1vh;
+  padding-inline: 1.75vw;
+  border-radius: 10px;
+  border: 3.2px solid rgb(32, 25, 16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartButtonText {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8vw;
+  font-weight: 800;
+  font-size: max(0.135em, min(1.35em, calc(100vw * 4 / 75)));
+  color: rgb(241, 235, 223);
 }
 
 .bestSellersSection {
