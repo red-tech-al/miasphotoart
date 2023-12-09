@@ -190,7 +190,7 @@ export default function Shop() {
           <section className={styles.products}>
             {products.map((product, i) => {
               return (
-                <div style={{ width: "21.25%" }} key={i}>
+                <div style={{ width: "21.25%", marginBottom: "5vw" }} key={i}>
                   <Product key={i} title={product.title} basePrice={product.basePrice} imageUrl={product.imageUrl} />
                 </div>
               )
