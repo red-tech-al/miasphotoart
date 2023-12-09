@@ -113,16 +113,6 @@ export default function Shop() {
       basePrice: "€130.00",
       imageUrl: "https://source.unsplash.com/1440x1440",
     },
-    {
-      title: "Eternity",
-      basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
-    },
-    {
-      title: "Mindful Photo Coaching",
-      basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
-    },
   ]
 
   const [quantity, setQuantity] = React.useState(0);
@@ -200,7 +190,9 @@ export default function Shop() {
           <section className={styles.products}>
             {products.map((product, i) => {
               return (
-                <Product key={i} title={product.title} basePrice={product.basePrice} imageUrl={product.imageUrl} />
+                <div style={{ width: "21.25%" }} key={i}>
+                  <Product key={i} title={product.title} basePrice={product.basePrice} imageUrl={product.imageUrl} />
+                </div>
               )
             })}
           </section>
