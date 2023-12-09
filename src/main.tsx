@@ -14,6 +14,7 @@ import Pricing from './routes/Pricing';
 import Portfolio from './routes/Portfolio';
 import Shop from './routes/Shop';
 import Contact from './routes/Contact';
+import About from './routes/About';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/about",
+    element: <About />,
   },
 ]);
 
