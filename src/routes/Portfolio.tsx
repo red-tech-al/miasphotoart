@@ -5,7 +5,23 @@ export default function Portfolio() {
   return (
     <Layout>
       <main className={styles.main}>
-        Portfolio
+        <section className={styles.heroSection}>
+          <div className={`${styles.row} ${styles.leftRow}`}>
+            <text className={styles.rowTitle}>Tourism</text>
+          </div>
+          <div className={`${styles.row} ${styles.rightRow}`}>
+            <text className={styles.rowTitle}>Tourism</text>
+          </div>
+          <div className={`${styles.row} ${styles.leftRow}`}>
+            <text className={styles.rowTitle}>Tourism</text>
+          </div>
+          <div className={`${styles.row} ${styles.rightRow}`}>
+            <text className={styles.rowTitle}>Tourism</text>
+          </div>
+          <div className={`${styles.row} ${styles.leftRow}`}>
+            <text className={styles.rowTitle}>Tourism</text>
+          </div>
+        </section>
       </main>
     </Layout>
   );
