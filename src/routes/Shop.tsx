@@ -128,14 +128,10 @@ export default function Shop() {
 
   const mousePosition = useMousePosition();
 
-  const trailerStyle = {
-    transform: `translate(${mousePosition})`
-  }
-
   return (
     <Layout>
       <Fade ssrFadeout duration={420}>
-        <div className={`${styles.trailer} ${trailerStyle}`} id="trailer"></div>
+        <div className={styles.trailer} style={{ transform: `translate(${mousePosition})` }} id="trailer"></div>
         <main className={styles.main}>
           <section className={styles.heroSection}>
             <text className={styles.heroText}>Shop</text>
