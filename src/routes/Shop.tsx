@@ -7,6 +7,8 @@ import config from 'react-reveal/globals';
 
 import { IoCart, IoCaretDown } from "react-icons/io5";
 
+import useMousePosition from "../context/useMousePosition";
+
 export default function Shop() {
 
   config({ ssrFadeout: true });
@@ -108,11 +110,6 @@ export default function Shop() {
       basePrice: "€130.00",
       imageUrl: "https://source.unsplash.com/1440x1440",
     },
-    {
-      title: "Eternity",
-      basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
-    },
   ]
 
   const [quantity, setQuantity] = React.useState(0);
@@ -129,9 +126,16 @@ export default function Shop() {
     }
   }
 
+  const mousePosition = useMousePosition();
+
+  const trailerStyle = {
+    transform: `translate(${mousePosition})`
+  }
+
   return (
     <Layout>
       <Fade ssrFadeout duration={420}>
+        <div className={`${styles.trailer} ${trailerStyle}`} id="trailer"></div>
         <main className={styles.main}>
           <section className={styles.heroSection}>
             <text className={styles.heroText}>Shop</text>
