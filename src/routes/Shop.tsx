@@ -7,6 +7,8 @@ import config from 'react-reveal/globals';
 
 import { IoCart, IoCaretDown } from "react-icons/io5";
 
+import useMousePosition from "../context/useMousePosition";
+
 export default function Shop() {
 
   config({ ssrFadeout: true });
@@ -62,7 +64,7 @@ export default function Shop() {
     },
   ]
 
-  const Product = (props) => {
+  const Product = (props: any) => {
     return (
       <div className={styles.product}>
         <img src={props.imageUrl} alt={props.title} className={styles.productImage} />
@@ -74,7 +76,7 @@ export default function Shop() {
     );
   }
 
-  const Category = (props) => {
+  const Category = (props: any) => {
     return (
       <div className={styles.category}>
         <text className={styles.categoryText}>{props.title}</text>
@@ -82,48 +84,33 @@ export default function Shop() {
     );
   }
 
-  // const products = [
-  //   {
-  //     title: "Eternity",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Mindful Photo Coaching",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Eternity",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Eternity",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Mindful Photo Coaching",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Eternity",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Eternity",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  //   {
-  //     title: "Mindful Photo Coaching",
-  //     basePrice: "€130.00",
-  //     imageUrl: "https://source.unsplash.com/1440x1440",
-  //   },
-  // ]
+  const products = [
+    {
+      title: "Eternity",
+      basePrice: "€130.00",
+      imageUrl: "https://source.unsplash.com/1440x1440",
+    },
+    {
+      title: "Mindful Photo Coaching",
+      basePrice: "€130.00",
+      imageUrl: "https://source.unsplash.com/1440x1440",
+    },
+    {
+      title: "Eternity",
+      basePrice: "€130.00",
+      imageUrl: "https://source.unsplash.com/1440x1440",
+    },
+    {
+      title: "Eternity",
+      basePrice: "€130.00",
+      imageUrl: "https://source.unsplash.com/1440x1440",
+    },
+    {
+      title: "Mindful Photo Coaching",
+      basePrice: "€130.00",
+      imageUrl: "https://source.unsplash.com/1440x1440",
+    },
+  ]
 
   const [quantity, setQuantity] = React.useState(0);
 
@@ -139,16 +126,23 @@ export default function Shop() {
     }
   }
 
+  const mousePosition = useMousePosition();
+
+  const trailerStyle = {
+    transform: `translate(${mousePosition})`
+  }
+
   return (
     <Layout>
       <Fade ssrFadeout duration={420}>
+        <div className={`${styles.trailer} ${trailerStyle}`} id="trailer"></div>
         <main className={styles.main}>
           <section className={styles.heroSection}>
             <text className={styles.heroText}>Shop</text>
           </section>
           <section className={styles.openProduct}>
             <div className={styles.openProductLeftContainer}>
-              <img src={"https://source.unsplash.com/1441x1441"} className={styles.openProductImage} alt={"leftImage"} />
+              <div className={styles.openProductImage} />
             </div>
             <div className={styles.openProductRightContainer}>
               <div className={styles.openProductTitleContainer}>
@@ -197,13 +191,15 @@ export default function Shop() {
               })}
             </div>
           </section>
-          {/* <section className={styles.products}>
+          <section className={styles.products}>
             {products.map((product, i) => {
               return (
-                <Product key={i} title={product.title} basePrice={product.basePrice} imageUrl={product.imageUrl} />
+                <div style={{ width: "21.25%", marginBottom: "5vw" }} key={i}>
+                  <Product key={i} title={product.title} basePrice={product.basePrice} imageUrl={product.imageUrl} />
+                </div>
               )
             })}
-          </section> */}
+          </section>
         </main>
       </Fade>
     </Layout>
