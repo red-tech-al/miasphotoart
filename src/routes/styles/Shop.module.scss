@@ -76,6 +76,16 @@
 .openProductImage {
   width: 100%;
   aspect-ratio: 1;
+  background-image: url("https://source.unsplash.com/1441x1441");
+  background-size: 102.5%;
+  background-position: center center;
+  object-fit: cover;
+  transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+  cursor: pointer;
+}
+
+.openProductImage:hover {
+  background-size: 100%;
 }
 
 .openProductRightContainer {

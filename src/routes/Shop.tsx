@@ -142,7 +142,7 @@ export default function Shop() {
           </section>
           <section className={styles.openProduct}>
             <div className={styles.openProductLeftContainer}>
-              <img src={"https://source.unsplash.com/1441x1441"} className={styles.openProductImage} alt={"leftImage"} />
+              <div className={styles.openProductImage} />
             </div>
             <div className={styles.openProductRightContainer}>
               <div className={styles.openProductTitleContainer}>
