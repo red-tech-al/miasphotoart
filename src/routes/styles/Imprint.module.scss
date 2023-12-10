@@ -1,0 +1,86 @@
+.main {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroSection {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("../../assets/images/imprint_image.jpeg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+.heroText {
+  font-weight: 900;
+  color: rgb(241, 235, 223);
+  font-size: max(0.5em, min(5em, calc(100vw * 4 / 75)));
+  text-align: center;
+}
+
+.content {
+  width: 95%;
+  padding-inline: 2.5%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.informationContainer {
+  flex: 1;
+  height: 35svh;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 5vh;
+}
+
+.locationContainer,
+.bankDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+}
+
+.text {
+  font-weight: 500;
+  font-size: max(0.125em, min(1.25em, calc(100vw * 4 / 75)));
+}
+
+.informationSectionTitle {
+  font-weight: 800;
+  font-size: max(0.15em, min(1.5em, calc(100vw * 4 / 75)));
+  padding-bottom: 0.25vh;
+}
+
+.textContainer {
+  flex: 2.5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5vh;
+}
+
+.sectionTitle {
+  font-weight: 900;
+  font-size: max(0.35em, min(3.5em, calc(100vw * 4 / 75)));
+  padding-bottom: 3.2vh;
+  line-height: 0.95;
+}
+
+.textContainer > .text {
+  width: 75%;
+  padding-bottom: 7.5vh;
+}

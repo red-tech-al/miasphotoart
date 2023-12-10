@@ -66,7 +66,7 @@ export default function Layout({ children }) {
               <Link to="/contact" className={styles.footerLink}>
                 <text className={styles.footerLinkText}>Contact</text>
               </Link>
-              <Link to="/" className={styles.footerLink}>
+              <Link to="/imprint" className={styles.footerLink}>
                 <text className={styles.footerLinkText}>Imprint</text>
               </Link>
             </div>
