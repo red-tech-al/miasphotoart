@@ -43,12 +43,12 @@ export default function Layout({ children }) {
             <text className={styles.navLinkText}>Shop</text>
             <div className={styles.navImage} />
           </Link>
-          <Link to="/contact" className={styles.navLink} onClick={() => toggleNav()}>
-            <text className={styles.navLinkText}>Contact</text>
-            <div className={styles.navImage} />
-          </Link>
           <Link to="/about" className={styles.navLink} onClick={() => toggleNav()}>
             <text className={styles.navLinkText}>About</text>
+            <div className={styles.navImage} />
+          </Link>
+          <Link to="/contact" className={styles.navLink} onClick={() => toggleNav()}>
+            <text className={styles.navLinkText}>Contact</text>
             <div className={styles.navImage} />
           </Link>
         </div>
