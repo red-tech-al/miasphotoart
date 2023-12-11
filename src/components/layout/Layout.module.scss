@@ -75,6 +75,34 @@
   padding-inline: 0.75rem;
 }
 
+.navLink:nth-child(1) > .navImage {
+  background-image: url("../../assets/images/shop_nav.png");
+}
+
+.navLink:nth-child(2) > .navImage {
+  background-image: url("../../assets/images/shop_nav.png");
+}
+
+.navLink:nth-child(3) > .navImage {
+  background-image: url("../../assets/images/pricing.png");
+}
+
+.navLink:nth-child(4) > .navImage {
+  background-image: url("../../assets/images/pricing.png");
+}
+
+.navLink:nth-child(5) > .navImage {
+  background-image: url("../../assets/images/shop_nav.png");
+}
+
+.navLink:nth-child(6) > .navImage {
+  background-image: url("../../assets/images/contact.png");
+}
+
+.navLink:nth-child(7) > .navImage {
+  background-image: url("../../assets/images/pricing.png");
+}
+
 .navLink {
   display: flex;
   flex-direction: column;
@@ -83,10 +111,9 @@
 }
 
 .navImage {
-  background-image: url("../../assets/images/pricing.png");
   width: max(18vw, 380px);
   aspect-ratio: 1.8 / 1;
-  background-size: 107.5%;
+  background-size: 105%;
   background-position: center center;
   object-fit: cover;
   transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);

@@ -34,7 +34,7 @@
   align-items: center;
   justify-content: center;
 
-  background-image: url("https://source.unsplash.com/random");
+  background-image: url("../../assets/images/shop.jpeg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -92,14 +92,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
 }
 
 .openProductTitleContainer {
   display: flex;
   flex-direction: column;
-  text-align: right;
-  align-items: flex-end;
 }
 
 .openProductTitle {
@@ -118,14 +115,12 @@
 
 .openProductDescriptionContainer {
   width: 64%;
-  text-align: right;
 }
 
 .openProductDescription {
   font-weight: 500;
   font-size: max(0.135em, min(1.35em, calc(100vw * 4 / 75)));
   line-height: 1.75;
-  text-align: right;
 }
 
 .openProductCategoriesContainer {
