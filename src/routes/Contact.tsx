@@ -22,6 +22,12 @@ export default function Contact() {
     }
   }
 
+  const [flipped, setFlipped] = React.useState(false);
+
+  const handleFlip = () => {
+    setFlipped(!flipped);
+  }
+
   return (
     <Layout>
       <Fade ssrFadeout duration={420}>
@@ -39,8 +45,14 @@ export default function Contact() {
             </form>
           </div>
           <div className={styles.rightContainer}>
-            <div className={styles.topContainer}>
-              <img alt='contact' src={ContactImage} className={styles.image} />
+            <div className={`${styles.topContainer} ${(flipped ? "flipped" : "")}`}>
+              <div className={styles.innerCard}>
+                <img alt='contact' src={ContactImage} className={styles.image} onClick={handleFlip} />
+                <div className={styles.backCard} onClick={handleFlip}>
+                  <text className={styles.backCardText}>Don't shoot what it looks like. Shoot what it feels like.</text>
+                  <text className={styles.backCardText}>- David Alan Harvey</text>
+                </div>
+              </div>
             </div>
             <div className={styles.bottomContainer}>
               <div className={styles.officeLocation}>

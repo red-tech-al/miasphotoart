@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
+// import { HashLink } from "react-router-hash-link";
 import styles from "./Layout.module.scss";
 
 import { IoAlbumsOutline, IoClose } from "react-icons/io5";
@@ -16,9 +16,9 @@ export default function Layout({ children }) {
 
   return (
     <main className={styles.main}>
-      <HashLink smooth to="#">
+      {/* <HashLink smooth to="#">
         <text className={styles.topButton}>Back To Top</text>
-      </HashLink>
+      </HashLink> */}
       <button className={styles.navToggle} onClick={() => toggleNav()} style={{ backgroundColor: `rgb(${(isOpenNav === "false") ? "91, 105, 134" : "225, 213, 189"})` }}>
         {(isOpenNav === "false") ? <IoAlbumsOutline className={styles.icon} style={{ color: "rgb(241, 235, 223)" }} /> : <IoClose className={styles.icon} style={{ color: "rgb(32, 25, 16)" }} />}
       </button>
@@ -48,7 +48,7 @@ export default function Layout({ children }) {
             <div className={styles.navImage} />
           </Link>
           <Link to="/about" className={styles.navLink} onClick={() => toggleNav()}>
-            <text className={styles.navLinkText}>About</text>
+            <text className={styles.navLinkText}>About Me</text>
             <div className={styles.navImage} />
           </Link>
           <Link to="/contact" className={styles.navLink} onClick={() => toggleNav()}>

@@ -7,26 +7,6 @@
   justify-content: center;
 }
 
-.trailer {
-  height: 25px;
-  width: 25px;
-  background-color: rgb(91, 105, 134);
-  border-radius: 50px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000000000;
-
-  pointer-events: none;
-
-  opacity: 0;
-  transition: 750ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
-}
-
-.main:hover > .trailer {
-  opacity: 1;
-}
-
 .heroSection {
   width: 100%;
   height: 100vh;
@@ -77,7 +57,7 @@
 .openProductImage {
   width: 100%;
   aspect-ratio: 1;
-  background-image: url("https://source.unsplash.com/1441x1441");
+  background-image: url("../../assets/images/product_images/eternity.jpeg");
   background-size: 102.5%;
   background-position: center center;
   object-fit: cover;
