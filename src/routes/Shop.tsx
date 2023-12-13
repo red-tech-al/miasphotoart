@@ -7,8 +7,6 @@ import config from 'react-reveal/globals';
 
 import { IoCart, IoCaretDown } from "react-icons/io5";
 
-import useMousePosition from "../context/useMousePosition";
-
 export default function Shop() {
 
   config({ ssrFadeout: true });
@@ -126,12 +124,9 @@ export default function Shop() {
     }
   }
 
-  const mousePosition = useMousePosition();
-
   return (
     <Layout>
       <Fade ssrFadeout duration={420}>
-        <div className={styles.trailer} style={{ transform: `translate(${mousePosition})` }} id="trailer"></div>
         <main className={styles.main}>
           <section className={styles.heroSection}>
             <text className={styles.heroText}>Shop</text>
