@@ -56,10 +56,33 @@
 }
 
 .bioSection {
-  width: 100%;
-  height: calc(fit-content + 12vh);
+  width: 95%;
+  margin-inline: 2.5%;
+  height: fit-content;
+  padding-block: 7.5vh;
   min-height: 100vh;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bioSectionTextContainer {
+  width: 45%;
+  height: fit-content;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+
+.bioTitle {
+  font-weight: 800;
+  font-size: max(0.25em, min(2.5em, calc(100vw * 4 / 75)));
+  margin-bottom: 2.75vh;
+}
+
+.bioText {
+  font-weight: 500;
+  font-size: max(0.1325em, min(1.325em, calc(100vw * 4 / 75)));
+  line-height: 1.5;
 }
