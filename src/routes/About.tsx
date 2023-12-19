@@ -17,7 +17,8 @@ export default function About() {
             {/* TODO: Make this a carousel like in the original website */}
             <img src={Michaela} alt={"image"} className={styles.heroImage} />
             <div className={styles.heroTextContainer}>
-              <text className={styles.heroTitle}>Hi! I'm<br />Michaela Maria Pfleger</text>
+              <text className={styles.heroTitle}>Michaela Maria Pfleger</text>
+              <text className={styles.heroSubtitle}>PHOTO & VIDEOGRAPHER</text>
               <HashLink smooth to="/about#bio" style={{ color: "inherit", textDecoration: "none" }}>
                 <IoArrowDown className={styles.downArrow} />
               </HashLink>
