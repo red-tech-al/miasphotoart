@@ -15,7 +15,7 @@
 
 .leftContainer,
 .rightContainer {
-  width: 45%;
+  width: 42%;
   display: flex;
 }
 
@@ -114,9 +114,9 @@
 .innerCard {
   transform-style: preserve-3d;
 
-  width: 75%;
+  width: 80%;
   aspect-ratio: 1;
-  margin-inline: 12.5%;
+  margin-inline: 10%;
   aspect-ratio: 1;
   margin-bottom: 5vh;
 }
@@ -153,7 +153,7 @@
 .backCardText {
   width: 75%;
   font-weight: 600;
-  font-size: max(0.21em, min(2.1em, calc(100vw * 4 / 75)));
+  font-size: max(0.2em, min(2em, calc(100vw * 4 / 75)));
   line-height: 1.275;
   text-align: center;
 }

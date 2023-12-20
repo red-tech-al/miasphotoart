@@ -47,8 +47,8 @@ export default function Contact() {
         </Fade>
         <Fade ssrFadeout duration={1600}>
           <div className={styles.rightContainer}>
-            <div className={`${styles.topContainer} ${(flipped ? styles.flipped : "")}`} onClick={handleFlip}>
-              <div className={styles.innerCard} onClick={handleFlip}>
+            <div className={`${styles.topContainer} ${(flipped ? styles.flipped : "")}`}>
+              <div className={styles.innerCard}>
                 <img alt='contact' src={ContactImage} className={styles.image} onClick={handleFlip} />
                 <div className={styles.backCard} onClick={handleFlip}>
                   <text className={styles.backCardText}><i>Don't shoot what it looks like. Shoot what it feels like.</i></text>
