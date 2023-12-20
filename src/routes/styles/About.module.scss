@@ -17,8 +17,8 @@
 }
 
 .heroImage {
-  width: 50%;
-  height: 100%;
+  width: 50vw;
+  height: 100vh;
   aspect-ratio: 1;
   object-fit: cover;
 }
@@ -93,4 +93,9 @@
   font-weight: 500;
   font-size: max(0.1325em, min(1.325em, calc(100vw * 4 / 75)));
   line-height: 1.5;
+}
+
+.sourceText {
+  font-weight: 700;
+  padding-top: 2.75vh;
 }

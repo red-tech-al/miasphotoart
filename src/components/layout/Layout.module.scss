@@ -13,11 +13,19 @@
   justify-content: center;
 }
 
-.topButton {
-  position: fixed;
+.fixedContainer {
+  position: absolute;
+  top: min(100%, 110vh);
   bottom: 1.25vw;
   right: 1.25vw;
   z-index: 100;
+  -webkit-mask: linear-gradient(to bottom, transparent, #fff 200px);
+  mask: linear-gradient(to bottom, transparent, #fff 200px);
+}
+
+.topButton {
+  position: sticky;
+  bottom: 1.25vw;
   transform: translate(-50%, -50%);
   color: rgba(32, 25, 16, 0.75);
   font-weight: 900;
