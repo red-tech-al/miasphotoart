@@ -134,9 +134,11 @@
   cursor: pointer;
   object-fit: cover;
   border-radius: 50%;
+  transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
 }
 
 .backCard {
+  transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.64);
   cursor: pointer;
   transform: rotateY(180deg);
@@ -163,6 +165,12 @@
   .topContainer {
     transform: rotateY(180deg);
   }
+}
+
+.image:hover,
+.backCard:hover {
+  scale: 1.02;
+  box-shadow: 0px 0px 27.5px rgba(0, 0, 0, 0.7);
 }
 
 .bottomContainer {

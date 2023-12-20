@@ -62,9 +62,9 @@ export default function About() {
       <Fade ssrFadeout duration={420}>
         <main className={styles.main}>
           <section className={styles.heroSection}>
-            <Fade ssrFadeout duration={1200}>
+            <Fade ssrFadeout duration={1500}>
               <div style={{ width: "50vw", height: "100vh" }}>
-                <SlideshowFade arrows={false} duration={3000} transitionDuration={1200}>
+                <SlideshowFade arrows={false} duration={4000} transitionDuration={1400}>
                   {images.map((image, i) => (
                     <img className={styles.heroImage} src={image.url} key={i} />
                   ))}

@@ -23,6 +23,19 @@ export default function Shop() {
         {
           title: "Canvas",
         },
+      ],
+      maxQuantity: 200,
+      size: [
+        {
+          value: "60x40",
+          title: "60cm x 40cm",
+          price: "€130 (VAT Incl., Shipping Costs Excl.)"
+        },
+        {
+          value: "150x100",
+          title: "150cm x 100cm",
+          price: "€370 (VAT Incl., Shipping Costs Excl.)"
+        },
       ]
     },
     {
@@ -108,6 +121,7 @@ export default function Shop() {
   ]
 
   const [quantity, setQuantity] = React.useState(0);
+  const [size, setSize] = React.useState("Size");
 
   const quantityDecrease = () => {
     if (quantity > 0) {
@@ -120,6 +134,11 @@ export default function Shop() {
       setQuantity(quantity + 1);
     }
   }
+
+  const handleSizeSelection = (e: any) => {
+    setSize(e.target.value);
+  }
+
 
   return (
     <Layout>
@@ -138,17 +157,20 @@ export default function Shop() {
               <div className={styles.openProductRightContainer}>
                 <div className={styles.openProductTitleContainer}>
                   <text className={styles.openProductTitle}>Eternity</text>
-                  <text className={styles.openProductSubtitle}>€130 (VAT Incl., Shipping Costs Excl.)</text>
+                  <text className={styles.openProductSubtitle}>{
+                    (size === "60x40") ? `${(quantity == 0) ? "€130" : "€" + (130 * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === "150x100") ? `${(quantity == 0) ? "€130" : "€" + (130 * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === "Size") && "Starting From €130"
+                  }
+                  </text>
                   <div className={styles.openProductDescriptionContainer}>
                     <text className={styles.openProductDescription}>Old Alpine House, Austria. Exclusively limited to a collection of 200 meticulously crafted pieces, each one bearing a unique hand-signed signature, adding a touch of individuality and exclusivity to every item.</text>
                   </div>
                 </div>
                 <div className={styles.openProductButtonsContainer}>
                   <div className={styles.sizeButton}>
-                    <select className={styles.sizeSelect}>
-                      <option value="0">Size</option>
-                      <option value="150">150</option>
-                      <option value="150">150</option>
+                    <select className={styles.sizeSelect} onChange={handleSizeSelection} id="sizeSelect" value={size}>
+                      <option value="Size">Size</option>
+                      <option value="60x40">60cm x 40cm</option>
+                      <option value="150x100">150cm x 100cm</option>
                     </select>
                     <IoCaretDown size={25} />
                   </div>

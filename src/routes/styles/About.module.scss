@@ -57,10 +57,13 @@
   color: rgb(241, 235, 223);
   padding: 1.45vh;
   border-radius: 50%;
+
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.64);
 }
 
 .downArrow:hover {
-  scale: 1.11275;
+  scale: 1.11375;
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.7);
 }
 
 .bioSection {
