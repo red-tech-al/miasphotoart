@@ -3,13 +3,10 @@ import styles from "./styles/Shop.module.scss";
 import Layout from "../components/layout/Layout";
 
 import { Fade } from "react-reveal";
-import config from 'react-reveal/globals';
 
 import { IoCart, IoCaretDown } from "react-icons/io5";
 
 export default function Shop() {
-
-  config({ ssrFadeout: true });
 
   const bestSellers = [
     {
@@ -132,52 +129,60 @@ export default function Shop() {
             <text className={styles.heroText}>Shop</text>
           </section>
           <section className={styles.openProduct}>
-            <div className={styles.openProductLeftContainer}>
-              <div className={styles.openProductImage} />
-            </div>
-            <div className={styles.openProductRightContainer}>
-              <div className={styles.openProductTitleContainer}>
-                <text className={styles.openProductTitle}>Eternity</text>
-                <text className={styles.openProductSubtitle}>€130 (VAT Incl., Shipping Costs Excl.)</text>
-                <div className={styles.openProductDescriptionContainer}>
-                  <text className={styles.openProductDescription}>Old Alpine House, Austria. Exclusively limited to a collection of 200 meticulously crafted pieces, each one bearing a unique hand-signed signature, adding a touch of individuality and exclusivity to every item.</text>
-                </div>
+            <Fade ssrFadeout left duration={1200}>
+              <div className={styles.openProductLeftContainer}>
+                <div className={styles.openProductImage} />
               </div>
-              <div className={styles.openProductButtonsContainer}>
-                <div className={styles.sizeButton}>
-                  <select className={styles.sizeSelect}>
-                    <option value="0">Size</option>
-                    <option value="150">150</option>
-                    <option value="150">150</option>
-                  </select>
-                  <IoCaretDown size={25} />
-                </div>
-                <div className={styles.twoButtonContainer}>
-                  <div className={styles.quantityButton}>
-                    <text className={styles.toggle} onClick={quantityDecrease}>-</text>
-                    <text className={styles.quantityButtonText}>{quantity || "Quantity"}</text>
-                    <text className={styles.toggle} onClick={quantityIncrease}>+</text>
-                  </div>
-                  <div className={styles.cartButton}>
-                    <text className={styles.cartButtonText}>Add To Cart <IoCart size={24} /></text>
+            </Fade>
+            <Fade ssrFadeout right duration={1200}>
+              <div className={styles.openProductRightContainer}>
+                <div className={styles.openProductTitleContainer}>
+                  <text className={styles.openProductTitle}>Eternity</text>
+                  <text className={styles.openProductSubtitle}>€130 (VAT Incl., Shipping Costs Excl.)</text>
+                  <div className={styles.openProductDescriptionContainer}>
+                    <text className={styles.openProductDescription}>Old Alpine House, Austria. Exclusively limited to a collection of 200 meticulously crafted pieces, each one bearing a unique hand-signed signature, adding a touch of individuality and exclusivity to every item.</text>
                   </div>
                 </div>
+                <div className={styles.openProductButtonsContainer}>
+                  <div className={styles.sizeButton}>
+                    <select className={styles.sizeSelect}>
+                      <option value="0">Size</option>
+                      <option value="150">150</option>
+                      <option value="150">150</option>
+                    </select>
+                    <IoCaretDown size={25} />
+                  </div>
+                  <div className={styles.twoButtonContainer}>
+                    <div className={styles.quantityButton}>
+                      <text className={styles.toggle} onClick={quantityDecrease}>-</text>
+                      <text className={styles.quantityButtonText}>{quantity || "Quantity"}</text>
+                      <text className={styles.toggle} onClick={quantityIncrease}>+</text>
+                    </div>
+                    <div className={styles.cartButton}>
+                      <text className={styles.cartButtonText}>Add To Cart <IoCart size={24} /></text>
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.openProductCategoriesContainer}>
+                  {bestSellers[0].categories.map((openProduct, i) => {
+                    return (
+                      <Category title={openProduct.title} key={i} />
+                    )
+                  })}
+                </div>
               </div>
-              <div className={styles.openProductCategoriesContainer}>
-                {bestSellers[0].categories.map((openProduct, i) => {
-                  return (
-                    <Category title={openProduct.title} key={i} />
-                  )
-                })}
-              </div>
-            </div>
+            </Fade>
           </section>
           <section className={styles.bestSellersSection}>
-            <text className={styles.sectionTitle}>Best Sellers</text>
+            <Fade left ssrFadeout duration={800}>
+              <text className={styles.sectionTitle}>Best Sellers</text>
+            </Fade>
             <div className={styles.bestSellersContainer}>
               {bestSellers.map((bestSeller, i) => {
                 return (
-                  <Product key={i} title={bestSeller.title} basePrice={bestSeller.basePrice} imageUrl={bestSeller.imageUrl} />
+                  <Fade bottom duration={750 + (i * 150)} ssrFadeout>
+                    <Product key={i} title={bestSeller.title} basePrice={bestSeller.basePrice} imageUrl={bestSeller.imageUrl} />
+                  </Fade>
                 )
               })}
             </div>
@@ -186,7 +191,9 @@ export default function Shop() {
             {products.map((product, i) => {
               return (
                 <div style={{ width: "21.25%", marginBottom: "5vw" }} key={i}>
-                  <Product key={i} title={product.title} basePrice={product.basePrice} imageUrl={product.imageUrl} />
+                  <Fade ssrFadeout duration={420}>
+                    <Product key={i} title={product.title} basePrice={product.basePrice} imageUrl={product.imageUrl} />
+                  </Fade>
                 </div>
               )
             })}

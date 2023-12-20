@@ -62,21 +62,24 @@ export default function About() {
       <Fade ssrFadeout duration={420}>
         <main className={styles.main}>
           <section className={styles.heroSection}>
-            {/* TODO: Make this a carousel like in the original website */}
-            <div style={{ width: "50vw", height: "100vh" }}>
-              <SlideshowFade arrows={false} duration={3000} transitionDuration={1200}>
-                {images.map((image, i) => (
-                  <img className={styles.heroImage} src={image.url} key={i} />
-                ))}
-              </SlideshowFade>
-            </div>
-            <div className={styles.heroTextContainer}>
-              <text className={styles.heroTitle}>Michaela Maria Pfleger</text>
-              <text className={styles.heroSubtitle}>PHOTO & VIDEOGRAPHER</text>
-              <HashLink smooth to="/about#bio" style={{ color: "inherit", textDecoration: "none" }}>
-                <IoArrowDown className={styles.downArrow} />
-              </HashLink>
-            </div>
+            <Fade ssrFadeout duration={1200}>
+              <div style={{ width: "50vw", height: "100vh" }}>
+                <SlideshowFade arrows={false} duration={3000} transitionDuration={1200}>
+                  {images.map((image, i) => (
+                    <img className={styles.heroImage} src={image.url} key={i} />
+                  ))}
+                </SlideshowFade>
+              </div>
+            </Fade>
+            <Fade ssrFadeout duration={1200}>
+              <div className={styles.heroTextContainer}>
+                <text className={styles.heroTitle}>Michaela Maria Pfleger</text>
+                <text className={styles.heroSubtitle}>PHOTO & VIDEOGRAPHER</text>
+                <HashLink smooth to="/about#bio" style={{ color: "inherit", textDecoration: "none" }}>
+                  <IoArrowDown className={styles.downArrow} />
+                </HashLink>
+              </div>
+            </Fade>
           </section>
           <section id="bio" className={styles.bioSection}>
             {bioQuestions.map((bioQuestion, i) => {
