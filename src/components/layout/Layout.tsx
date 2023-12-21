@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import styles from "./Layout.module.scss";
+import { ScrollRestoration } from "react-router-dom";
 
 import { IoAlbumsOutline, IoClose, IoArrowUp } from "react-icons/io5";
 
@@ -84,6 +85,7 @@ export default function Layout({ children }) {
             </Fade>
           </section>
       }
+      <ScrollRestoration />
     </main>
   );
 }
