@@ -75,7 +75,7 @@ export default function About() {
               <div className={styles.heroTextContainer}>
                 <text className={styles.heroTitle}>Michaela Maria Pfleger</text>
                 <text className={styles.heroSubtitle}>PHOTO & VIDEOGRAPHER</text>
-                <HashLink smooth to="/about#bio" style={{ color: "inherit", textDecoration: "none" }}>
+                <HashLink preventScrollReset={true} smooth to="/about#bio" style={{ color: "inherit", textDecoration: "none" }}>
                   <IoArrowDown className={styles.downArrow} />
                 </HashLink>
               </div>
