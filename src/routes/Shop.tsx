@@ -6,6 +6,8 @@ import { Fade } from "react-reveal";
 
 import { IoCart, IoCaretDown } from "react-icons/io5";
 
+// import ShopItemModal from "../components/global/ShopModal";
+
 export default function Shop() {
 
   const bestSellers = [
@@ -73,14 +75,24 @@ export default function Shop() {
   ]
 
   const Product = (props: any) => {
+    // const [show, setShow] = React.useState(false);
+
+    // const handleClick = () => {
+    //   setShow(!show);
+    // }
+
     return (
-      <div className={styles.product}>
-        <img src={props.imageUrl} alt={props.title} className={styles.productImage} />
-        <div className={styles.productTextContainer}>
-          <text className={styles.productTitle}>{props.title}</text>
-          <text className={styles.productPrice}>From {props.basePrice}</text>
+      <>
+        <div className={styles.product} onClick={() => { }}>
+          <img src={props.imageUrl} alt={props.title} className={styles.productImage} />
+          <div className={styles.productTextContainer}>
+            <text className={styles.productTitle}>{props.title}</text>
+            <text className={styles.productPrice}>From {props.basePrice}</text>
+          </div>
         </div>
-      </div>
+        {/* <ShopItemModal title={props.title} basePrice={props.basePrice} imageUrl={props.imageUrl} show={show} /> */}
+      </>
+
     );
   }
 
@@ -97,28 +109,124 @@ export default function Shop() {
       title: "Eternity",
       basePrice: "€130.00",
       imageUrl: "https://source.unsplash.com/1440x1440",
+      categories: [
+        {
+          title: "Landscape",
+        },
+        {
+          title: "Nature",
+        },
+        {
+          title: "Canvas",
+        },
+      ],
+      maxQuantity: 200,
+      size: [
+        {
+          value: "60x40",
+          title: "60cm x 40cm",
+          price: "€130 (VAT Incl., Shipping Costs Excl.)"
+        },
+        {
+          value: "150x100",
+          title: "150cm x 100cm",
+          price: "€370 (VAT Incl., Shipping Costs Excl.)"
+        },
+      ]
     },
     {
       title: "Mindful Photo Coaching",
       basePrice: "€130.00",
       imageUrl: "https://source.unsplash.com/1440x1440",
+      categories: [
+        {
+          title: "Landscape",
+        },
+        {
+          title: "Nature",
+        },
+        {
+          title: "Canvas",
+        },
+      ]
     },
     {
       title: "Eternity",
       basePrice: "€130.00",
       imageUrl: "https://source.unsplash.com/1440x1440",
+      categories: [
+        {
+          title: "Landscape",
+        },
+        {
+          title: "Nature",
+        },
+        {
+          title: "Canvas",
+        },
+      ]
     },
     {
-      title: "Eternity",
-      basePrice: "€130.00",
+      title: "The Golden Gate Bridge",
+      basePrice: "€200.00",
       imageUrl: "https://source.unsplash.com/1440x1440",
+      categories: [
+        {
+          title: "Landscape",
+        },
+        {
+          title: "City",
+        },
+        {
+          title: "Bridge",
+        },
+      ],
+      maxQuantity: 100,
+      size: [
+        {
+          value: "60x40",
+          title: "60cm x 40cm",
+          price: "€200 (VAT Incl., Shipping Costs Excl.)"
+        },
+        {
+          value: "150x100",
+          title: "150cm x 100cm",
+          price: "€400 (VAT Incl., Shipping Costs Excl.)"
+        },
+      ]
     },
     {
-      title: "Mindful Photo Coaching",
-      basePrice: "€130.00",
+      title: "The Statue of Liberty",
+      basePrice: "€175.00",
       imageUrl: "https://source.unsplash.com/1440x1440",
+      categories: [
+        {
+          title: "Landscape",
+        },
+        {
+          title: "City",
+        },
+        {
+          title: "Landmark",
+        },
+      ],
+      maxQuantity: 200,
+      size: [
+        {
+          value: "60x40",
+          title: "60cm x 40cm",
+          price: "€175 (VAT Incl., Shipping Costs Excl.)"
+        },
+        {
+          value: "150x100",
+          title: "150cm x 100cm",
+          price: "€350 (VAT Incl., Shipping Costs Excl.)"
+        },
+      ]
     },
   ]
+
+
 
   const [quantity, setQuantity] = React.useState(0);
   const [size, setSize] = React.useState("Size");
