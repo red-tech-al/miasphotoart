@@ -6,6 +6,8 @@ import { Fade } from "react-reveal";
 
 import { IoCart, IoCaretDown } from "react-icons/io5";
 
+// import ShopItemModal from "../components/global/ShopModal";
+
 export default function Shop() {
 
   const bestSellers = [
@@ -73,14 +75,24 @@ export default function Shop() {
   ]
 
   const Product = (props: any) => {
+    // const [show, setShow] = React.useState(false);
+
+    // const handleClick = () => {
+    //   setShow(!show);
+    // }
+
     return (
-      <div className={styles.product}>
-        <img src={props.imageUrl} alt={props.title} className={styles.productImage} />
-        <div className={styles.productTextContainer}>
-          <text className={styles.productTitle}>{props.title}</text>
-          <text className={styles.productPrice}>From {props.basePrice}</text>
+      <>
+        <div className={styles.product} onClick={() => { }}>
+          <img src={props.imageUrl} alt={props.title} className={styles.productImage} />
+          <div className={styles.productTextContainer}>
+            <text className={styles.productTitle}>{props.title}</text>
+            <text className={styles.productPrice}>From {props.basePrice}</text>
+          </div>
         </div>
-      </div>
+        {/* <ShopItemModal title={props.title} basePrice={props.basePrice} imageUrl={props.imageUrl} show={show} /> */}
+      </>
+
     );
   }
 
