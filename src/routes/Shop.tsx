@@ -196,35 +196,6 @@ export default function Shop() {
       ]
     },
     {
-      title: "The Eiffel Tower",
-      basePrice: "€150.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
-      categories: [
-        {
-          title: "Landscape",
-        },
-        {
-          title: "City",
-        },
-        {
-          title: "Landmark",
-        },
-      ],
-      maxQuantity: 150,
-      size: [
-        {
-          value: "60x40",
-          title: "60cm x 40cm",
-          price: "€150 (VAT Incl., Shipping Costs Excl.)"
-        },
-        {
-          value: "150x100",
-          title: "150cm x 100cm",
-          price: "€300 (VAT Incl., Shipping Costs Excl.)"
-        },
-      ]
-    },
-    {
       title: "The Statue of Liberty",
       basePrice: "€175.00",
       imageUrl: "https://source.unsplash.com/1440x1440",
