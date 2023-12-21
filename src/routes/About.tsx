@@ -71,7 +71,7 @@ export default function About() {
                 </SlideshowFade>
               </div>
             </Fade>
-            <Fade ssrFadeout duration={1200}>
+            <Fade ssrFadeout duration={1600}>
               <div className={styles.heroTextContainer}>
                 <text className={styles.heroTitle}>Michaela Maria Pfleger</text>
                 <text className={styles.heroSubtitle}>PHOTO & VIDEOGRAPHER</text>
