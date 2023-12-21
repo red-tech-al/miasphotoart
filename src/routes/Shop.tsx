@@ -7,6 +7,7 @@ import { Fade } from "react-reveal";
 import { IoCart, IoCaretDown } from "react-icons/io5";
 
 // import ShopItemModal from "../components/global/ShopModal";
+import viewImageHandler from "../context/viewImageHandler";
 
 export default function Shop() {
 
@@ -257,8 +258,8 @@ export default function Shop() {
           </section>
           <section className={styles.openProduct}>
             <Fade ssrFadeout left duration={1200}>
-              <div className={styles.openProductLeftContainer}>
-                <div className={styles.openProductImage} />
+              <div className={styles.openProductLeftContainer} onClick={() => viewImageHandler(bestSellers[0].imageUrl, bestSellers[0].title)}>
+                <img className={styles.openProductImage} src={bestSellers[0].imageUrl} alt={bestSellers[0].title} />
               </div>
             </Fade>
             <Fade ssrFadeout right duration={1200}>
