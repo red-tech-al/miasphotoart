@@ -17,8 +17,8 @@
 }
 
 .heroImage {
-  width: 50%;
-  height: 100%;
+  width: 50vw;
+  height: 100vh;
   aspect-ratio: 1;
   object-fit: cover;
 }
@@ -26,7 +26,6 @@
 .heroTextContainer {
   display: flex;
   flex-direction: column;
-  gap: 7.5vh;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -40,19 +39,31 @@
   line-height: 1.1275;
 }
 
+.heroSubtitle {
+  font-weight: 800;
+  font-size: max(0.122em, min(1.22em, calc(100vw * 4 / 75)));
+  text-align: right;
+  opacity: 0.56;
+  padding-top: 2.25vh;
+  padding-bottom: 7.75vh;
+}
+
 .downArrow {
   font-weight: 900;
-  font-size: max(0.34em, min(3.4em, calc(100vw * 4 / 75)));
+  font-size: max(0.32em, min(3.2em, calc(100vw * 4 / 75)));
   transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
 
   background-color: rgb(32, 25, 16);
   color: rgb(241, 235, 223);
-  padding: 1.5vh;
+  padding: 1.45vh;
   border-radius: 50%;
+
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.64);
 }
 
 .downArrow:hover {
-  scale: 1.11275;
+  scale: 1.11375;
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.7);
 }
 
 .bioSection {
@@ -60,11 +71,11 @@
   margin-inline: 2.5%;
   height: fit-content;
   padding-block: 7.5vh;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
@@ -85,4 +96,9 @@
   font-weight: 500;
   font-size: max(0.1325em, min(1.325em, calc(100vw * 4 / 75)));
   line-height: 1.5;
+}
+
+.sourceText {
+  font-weight: 700;
+  padding-top: 2.75vh;
 }

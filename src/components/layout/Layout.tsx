@@ -1,9 +1,12 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-// import { HashLink } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 import styles from "./Layout.module.scss";
+import { ScrollRestoration } from "react-router-dom";
 
-import { IoAlbumsOutline, IoClose } from "react-icons/io5";
+import { IoAlbumsOutline, IoClose, IoArrowUp } from "react-icons/io5";
+
+import { Fade } from "react-reveal"
 
 export default function Layout({ children }) {
   const location = useLocation().pathname;
@@ -16,9 +19,11 @@ export default function Layout({ children }) {
 
   return (
     <main className={styles.main}>
-      {/* <HashLink smooth to="#">
-        <text className={styles.topButton}>Back To Top</text>
-      </HashLink> */}
+      <HashLink smooth to="#">
+        <div className={styles.fixedContainer}>
+          <IoArrowUp className={styles.topButton} />
+        </div>
+      </HashLink>
       <button className={styles.navToggle} onClick={() => toggleNav()} style={{ backgroundColor: `rgb(${(isOpenNav === "false") ? "91, 105, 134" : "225, 213, 189"})` }}>
         {(isOpenNav === "false") ? <IoAlbumsOutline className={styles.icon} style={{ color: "rgb(241, 235, 223)" }} /> : <IoClose className={styles.icon} style={{ color: "rgb(32, 25, 16)" }} />}
       </button>
@@ -63,19 +68,24 @@ export default function Layout({ children }) {
           <div style={{ display: "none" }}></div>
           :
           <section className={styles.footer}>
-            <div className={styles.footerLeftContainer}>
-              <text className={styles.copyrightText}>© Copyright Mias Photoart</text>
-            </div>
-            <div className={styles.footerRightContainer}>
-              <Link to="/contact" className={styles.footerLink}>
-                <text className={styles.footerLinkText}>Contact</text>
-              </Link>
-              <Link to="/imprint" className={styles.footerLink}>
-                <text className={styles.footerLinkText}>Imprint</text>
-              </Link>
-            </div>
+            <Fade left duration={750}>
+              <div className={styles.footerLeftContainer}>
+                <text className={styles.copyrightText}>© Copyright Mias Photoart</text>
+              </div>
+            </Fade>
+            <Fade right duration={750}>
+              <div className={styles.footerRightContainer}>
+                <Link to="/contact" className={styles.footerLink}>
+                  <text className={styles.footerLinkText}>Contact</text>
+                </Link>
+                <Link to="/imprint" className={styles.footerLink}>
+                  <text className={styles.footerLinkText}>Imprint</text>
+                </Link>
+              </div>
+            </Fade>
           </section>
       }
+      <ScrollRestoration />
     </main>
   );
 }

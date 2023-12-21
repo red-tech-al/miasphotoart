@@ -30,8 +30,8 @@ export default function Contact() {
 
   return (
     <Layout>
-      <Fade ssrFadeout duration={420}>
-        <main className={styles.main}>
+      <main className={styles.main}>
+        <Fade ssrFadeout duration={1200} left>
           <div className={styles.leftContainer}>
             <text className={styles.pageTitle}>Contact Me</text>
             <form className={styles.contactForm}>
@@ -44,31 +44,37 @@ export default function Contact() {
               </div>
             </form>
           </div>
+        </Fade>
+        <Fade ssrFadeout duration={1600}>
           <div className={styles.rightContainer}>
-            <div className={`${styles.topContainer} ${(flipped ? "flipped" : "")}`}>
+            <div className={`${styles.topContainer} ${(flipped ? styles.flipped : "")}`}>
               <div className={styles.innerCard}>
                 <img alt='contact' src={ContactImage} className={styles.image} onClick={handleFlip} />
                 <div className={styles.backCard} onClick={handleFlip}>
-                  <text className={styles.backCardText}>Don't shoot what it looks like. Shoot what it feels like.</text>
-                  <text className={styles.backCardText}>- David Alan Harvey</text>
+                  <text className={styles.backCardText}><i>Don't shoot what it looks like. Shoot what it feels like.</i></text>
+                  <text className={styles.backCardText} style={{ fontWeight: "800" }}>- David Alan Harvey</text>
                 </div>
               </div>
             </div>
             <div className={styles.bottomContainer}>
-              <div className={styles.officeLocation}>
-                <text className={styles.officeLocationText}>Graz - Head Office</text>
-                <text className={styles.contactDetails}><span className={styles.bold}>Email:</span> info@miasphotoart.at</text>
-                <text className={styles.contactDetails}><span className={styles.bold}>Phone:</span> +43 664 2072501</text>
-              </div>
-              <div className={styles.officeLocation} style={{ textAlign: "right", alignItems: "flex-end" }}>
-                <text className={styles.officeLocationText}>Klagenfurt</text>
-                <text className={styles.contactDetails}><span className={styles.bold}>Email:</span> klagenfurt@miasphotoart.at</text>
-                <text className={styles.contactDetails}><span className={styles.bold}>Phone:</span> +43 664 2072501</text>
-              </div>
+              <Fade ssrFadeout duration={1000} bottom>
+                <div className={styles.officeLocation}>
+                  <text className={styles.officeLocationText}>Graz - Head Office</text>
+                  <text className={styles.contactDetails}><span className={styles.bold}>Email:</span> info@miasphotoart.at</text>
+                  <text className={styles.contactDetails}><span className={styles.bold}>Phone:</span> +43 664 2072501</text>
+                </div>
+              </Fade>
+              <Fade ssrFadeout duration={1600} bottom>
+                <div className={styles.officeLocation} style={{ textAlign: "right", alignItems: "flex-end" }}>
+                  <text className={styles.officeLocationText}>Klagenfurt</text>
+                  <text className={styles.contactDetails}><span className={styles.bold}>Email:</span> klagenfurt@miasphotoart.at</text>
+                  <text className={styles.contactDetails}><span className={styles.bold}>Phone:</span> +43 664 2072501</text>
+                </div>
+              </Fade>
             </div>
           </div>
-        </main>
-      </Fade>
+        </Fade>
+      </main>
     </Layout>
   );
 }
