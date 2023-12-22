@@ -7,6 +7,17 @@ import { Fade } from "react-reveal";
 import { IoCart, IoCaretDown } from "react-icons/io5";
 
 // import ShopItemModal from "../components/global/ShopModal";
+import viewImageHandler from "../context/viewImageHandler";
+
+import Eternity from "../assets/images/product_images/eternity.jpeg";
+import Coaching from "../assets/images/product_images/photo-coaching.jpeg";
+import Elefant from "../assets/images/product_images/elefant.jpeg";
+import Trust from "../assets/images/product_images/trust.jpeg";
+import Seychellen from "../assets/images/product_images/seychellen.jpeg";
+import Muschel from "../assets/images/product_images/muschel.jpeg";
+import Packer_Stausse from "../assets/images/product_images/packer-stausse.jpeg";
+import Gutschein from "../assets/images/product_images/gutschein.jpeg";
+import Weitblick from "../assets/images/product_images/weitblick.jpeg";
 
 export default function Shop() {
 
@@ -14,7 +25,7 @@ export default function Shop() {
     {
       title: "Eternity",
       basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
+      imageUrl: Eternity,
       categories: [
         {
           title: "Landscape",
@@ -42,8 +53,9 @@ export default function Shop() {
     },
     {
       title: "Mindful Photo Coaching",
-      basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
+      basePrice: "€288.00",
+      maxPrice: "€288.00",
+      imageUrl: Coaching,
       categories: [
         {
           title: "Landscape",
@@ -57,9 +69,10 @@ export default function Shop() {
       ]
     },
     {
-      title: "Eternity",
+      title: "Present",
       basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
+      maxPrice: "€370.00",
+      imageUrl: Muschel,
       categories: [
         {
           title: "Landscape",
@@ -84,15 +97,14 @@ export default function Shop() {
     return (
       <>
         <div className={styles.product} onClick={() => { }}>
-          <img src={props.imageUrl} alt={props.title} className={styles.productImage} />
+          <div style={{ backgroundImage: `url(${props.imageUrl})` }} className={styles.productImage}></div>
           <div className={styles.productTextContainer}>
             <text className={styles.productTitle}>{props.title}</text>
-            <text className={styles.productPrice}>From {props.basePrice}</text>
+            <text className={styles.productPrice}>{props.basePrice === props.maxPrice ? "" : "From"} {props.basePrice}</text>
           </div>
         </div>
         {/* <ShopItemModal title={props.title} basePrice={props.basePrice} imageUrl={props.imageUrl} show={show} /> */}
       </>
-
     );
   }
 
@@ -106,9 +118,10 @@ export default function Shop() {
 
   const products = [
     {
-      title: "Eternity",
+      title: "Quality",
       basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
+      maxPrice: "€370.00",
+      imageUrl: Elefant,
       categories: [
         {
           title: "Landscape",
@@ -135,9 +148,10 @@ export default function Shop() {
       ]
     },
     {
-      title: "Mindful Photo Coaching",
+      title: "Clarity",
       basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
+      maxPrice: "€370.00",
+      imageUrl: Packer_Stausse,
       categories: [
         {
           title: "Landscape",
@@ -151,25 +165,10 @@ export default function Shop() {
       ]
     },
     {
-      title: "Eternity",
+      title: "Natural Beauty",
       basePrice: "€130.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
-      categories: [
-        {
-          title: "Landscape",
-        },
-        {
-          title: "Nature",
-        },
-        {
-          title: "Canvas",
-        },
-      ]
-    },
-    {
-      title: "The Golden Gate Bridge",
-      basePrice: "€200.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
+      maxPrice: "€370.00",
+      imageUrl: Seychellen,
       categories: [
         {
           title: "Landscape",
@@ -196,9 +195,10 @@ export default function Shop() {
       ]
     },
     {
-      title: "The Statue of Liberty",
-      basePrice: "€175.00",
-      imageUrl: "https://source.unsplash.com/1440x1440",
+      title: "Trust",
+      basePrice: "€130.00",
+      maxPrice: "€370.00",
+      imageUrl: Trust,
       categories: [
         {
           title: "Landscape",
@@ -221,6 +221,53 @@ export default function Shop() {
           value: "150x100",
           title: "150cm x 100cm",
           price: "€350 (VAT Incl., Shipping Costs Excl.)"
+        },
+      ]
+    },
+    {
+      title: "Foresight",
+      basePrice: "€130.00",
+      maxPrice: "€370.00",
+      imageUrl: Weitblick,
+      categories: [
+        {
+          title: "Landscape",
+        },
+        {
+          title: "City",
+        },
+        {
+          title: "Landmark",
+        },
+      ],
+      maxQuantity: 200,
+      size: [
+        {
+          value: "60x40",
+          title: "60cm x 40cm",
+          price: "€175 (VAT Incl., Shipping Costs Excl.)"
+        },
+        {
+          value: "150x100",
+          title: "150cm x 100cm",
+          price: "€350 (VAT Incl., Shipping Costs Excl.)"
+        },
+      ]
+    },
+    {
+      title: "Voucher",
+      basePrice: "€50.00",
+      maxPrice: "€50.00",
+      imageUrl: Gutschein,
+      categories: [
+        {
+          title: "Landscape",
+        },
+        {
+          title: "Nature",
+        },
+        {
+          title: "Canvas",
         },
       ]
     },
@@ -257,8 +304,8 @@ export default function Shop() {
           </section>
           <section className={styles.openProduct}>
             <Fade ssrFadeout left duration={1200}>
-              <div className={styles.openProductLeftContainer}>
-                <div className={styles.openProductImage} />
+              <div className={styles.openProductLeftContainer} onClick={() => viewImageHandler(bestSellers[0].imageUrl, bestSellers[0].title)}>
+                <div className={styles.openProductImage} style={{ backgroundImage: `url(${bestSellers[0].imageUrl})` }} />
               </div>
             </Fade>
             <Fade ssrFadeout right duration={1200}>
@@ -266,7 +313,7 @@ export default function Shop() {
                 <div className={styles.openProductTitleContainer}>
                   <text className={styles.openProductTitle}>Eternity</text>
                   <text className={styles.openProductSubtitle}>{
-                    (size === "60x40") ? `${(quantity == 0) ? "€130" : "€" + (130 * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === "150x100") ? `${(quantity == 0) ? "€130" : "€" + (130 * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === "Size") && "Starting From €130"
+                    (size === "60x40") ? `${(quantity == 0) ? "€130" : "€" + (130 * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === "150x100") ? `${(quantity == 0) ? "€370" : "€" + (370 * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === "Size") && "Starting From €130"
                   }
                   </text>
                   <div className={styles.openProductDescriptionContainer}>
@@ -311,7 +358,7 @@ export default function Shop() {
               {bestSellers.map((bestSeller, i) => {
                 return (
                   <Fade bottom duration={750 + (i * 150)} ssrFadeout>
-                    <Product key={i} title={bestSeller.title} basePrice={bestSeller.basePrice} imageUrl={bestSeller.imageUrl} />
+                    <Product key={i} title={bestSeller.title} basePrice={bestSeller.basePrice} imageUrl={bestSeller.imageUrl} maxPrice={bestSeller.maxPrice} categories={bestSeller.categories} maxQuantity={bestSeller.maxQuantity} size={bestSeller.size} />
                   </Fade>
                 )
               })}
@@ -322,7 +369,7 @@ export default function Shop() {
               return (
                 <div style={{ width: "21.25%", marginBottom: "5vw" }} key={i}>
                   <Fade ssrFadeout duration={420}>
-                    <Product key={i} title={product.title} basePrice={product.basePrice} imageUrl={product.imageUrl} />
+                    <Product key={i} title={product.title} basePrice={product.basePrice} imageUrl={product.imageUrl} maxPrice={product.maxPrice} categories={product.categories} maxQuantity={product.maxQuantity} size={product.size} />
                   </Fade>
                 </div>
               )

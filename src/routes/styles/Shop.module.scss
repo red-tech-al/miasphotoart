@@ -57,12 +57,12 @@
 .openProductImage {
   width: 100%;
   aspect-ratio: 1;
-  background-image: url("../../assets/images/product_images/eternity.jpeg");
+  object-fit: cover;
+  cursor: pointer;
   background-size: 102.5%;
   background-position: center center;
-  object-fit: cover;
   transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
-  cursor: pointer;
+  background-repeat: no-repeat;
 }
 
 .openProductImage:hover {
@@ -227,9 +227,6 @@ select {
   flex-direction: column;
   justify-content: center;
   gap: 7.5vh;
-  // background-color: rgb(91, 105, 134);
-  // background-color: rgb(32, 25, 16);
-  // color: rgb(241, 235, 223);
 }
 
 .bestSellersContainer {
@@ -245,7 +242,18 @@ select {
 
 .productImage {
   width: 100%;
-  aspect-ratio: 1;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: 102.5%;
+  background-position: center center;
+  transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+  margin-bottom: 2.5%;
+}
+
+.productImage:hover {
+  background-size: 100%;
 }
 
 .productTextContainer {
