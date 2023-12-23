@@ -49,8 +49,8 @@ export default function Contact() {
           <div className={styles.rightContainer}>
             <div className={`${styles.topContainer} ${(flipped ? styles.flipped : "")}`}>
               <div className={styles.innerCard}>
-                <img alt='contact' src={ContactImage} className={styles.image} onClick={handleFlip} />
-                <div className={styles.backCard} onClick={handleFlip}>
+                <img alt='contact' src={ContactImage} className={styles.image} onClick={handleFlip} onMouseOver={handleFlip} /> {/* TODO: Fix this onMouseOver event */}
+                <div className={styles.backCard} onClick={handleFlip} onMouseOver={handleFlip}>
                   <text className={styles.backCardText}><i>Don't shoot what it looks like. Shoot what it feels like.</i></text>
                   <text className={styles.backCardText} style={{ fontWeight: "800" }}>- David Alan Harvey</text>
                 </div>
