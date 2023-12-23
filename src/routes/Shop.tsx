@@ -297,7 +297,7 @@ export default function Shop() {
 
   return (
     <Layout>
-      <Fade ssrFadeout duration={420}>
+      <Fade ssrFadeout duration={460}>
         <main className={styles.main}>
           <section className={styles.heroSection}>
             <text className={styles.heroText}>Shop</text>
@@ -358,7 +358,7 @@ export default function Shop() {
               {bestSellers.map((bestSeller, i) => {
                 return (
                   <div style={{ width: "33.33333333333333333%" }} key={i}>
-                    <Fade bottom duration={750 + (i * 150)} ssrFadeout>
+                    <Fade bottom duration={600 + (i * 225)} ssrFadeout>
                       <Product key={i} title={bestSeller.title} basePrice={bestSeller.basePrice} imageUrl={bestSeller.imageUrl} maxPrice={bestSeller.maxPrice} categories={bestSeller.categories} maxQuantity={bestSeller.maxQuantity} size={bestSeller.size} />
                     </Fade>
                   </div>
