@@ -13,7 +13,7 @@ export default function Imprint() {
           <section className={styles.heroSection}>
             <text className={styles.heroText}>Imprint</text>
           </section>
-          <Fade ssrFadeout duration={1000} bottom>
+          <Fade ssrFadeout duration={1275} bottom>
             <section className={styles.content}>
               <div className={styles.informationContainer}>
                 <div className={styles.locationContainer}>
