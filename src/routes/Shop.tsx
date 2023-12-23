@@ -357,9 +357,11 @@ export default function Shop() {
             <div className={styles.bestSellersContainer}>
               {bestSellers.map((bestSeller, i) => {
                 return (
-                  <Fade bottom duration={750 + (i * 150)} ssrFadeout>
-                    <Product key={i} title={bestSeller.title} basePrice={bestSeller.basePrice} imageUrl={bestSeller.imageUrl} maxPrice={bestSeller.maxPrice} categories={bestSeller.categories} maxQuantity={bestSeller.maxQuantity} size={bestSeller.size} />
-                  </Fade>
+                  <div style={{ width: "33.33333333333333333%" }} key={i}>
+                    <Fade bottom duration={750 + (i * 150)} ssrFadeout>
+                      <Product key={i} title={bestSeller.title} basePrice={bestSeller.basePrice} imageUrl={bestSeller.imageUrl} maxPrice={bestSeller.maxPrice} categories={bestSeller.categories} maxQuantity={bestSeller.maxQuantity} size={bestSeller.size} />
+                    </Fade>
+                  </div>
                 )
               })}
             </div>
@@ -368,7 +370,7 @@ export default function Shop() {
             {products.map((product, i) => {
               return (
                 <div style={{ width: "21.25%", marginBottom: "5vw" }} key={i}>
-                  <Fade ssrFadeout duration={420}>
+                  <Fade ssrFadeout bottom duration={450 + (i * 200)}>
                     <Product key={i} title={product.title} basePrice={product.basePrice} imageUrl={product.imageUrl} maxPrice={product.maxPrice} categories={product.categories} maxQuantity={product.maxQuantity} size={product.size} />
                   </Fade>
                 </div>
