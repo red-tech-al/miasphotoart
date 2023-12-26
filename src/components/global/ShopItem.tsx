@@ -1,6 +1,9 @@
-const ShopItemModal = (product: any, show: Boolean) => {
+// import React from "react";
+import styles from "./styles/ShopItem.module.scss";
+
+export default function ShopItem(product: any) {
   return (
-    <div style={{ display: show ? "block" : "none", height: "100vh", width: "100vw" }}>
+    <main className={styles.main}>
       <div>
         <text>{product.title}</text>
       </div>
@@ -9,11 +12,8 @@ const ShopItemModal = (product: any, show: Boolean) => {
         <p>{product.basePrice}</p>
       </div>
       <div>
-        <button onClick={() => { show = false }}>Close</button>
         <button>Add to Cart</button>
       </div>
-    </div>
+    </main>
   );
 };
-
-export default ShopItemModal;

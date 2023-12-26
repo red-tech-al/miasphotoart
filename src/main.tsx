@@ -16,6 +16,7 @@ import Shop from './routes/Shop';
 import Contact from './routes/Contact';
 import About from './routes/About';
 import Imprint from './routes/Imprint';
+import ShopItem from './components/global/ShopItem';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,12 @@ const router = createBrowserRouter([
   {
     path: "/shop",
     element: <Shop />,
+    children: [
+      {
+        path: "/shop/:id",
+        element: <ShopItem />,
+      },
+    ]
   },
   {
     path: "/contact",

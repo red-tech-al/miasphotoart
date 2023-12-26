@@ -4,9 +4,8 @@ import Layout from "../components/layout/Layout";
 
 import { Fade } from "react-reveal";
 
-import { IoCart, IoCaretDown } from "react-icons/io5";
+import { IoBagHandle, IoCaretDown } from "react-icons/io5";
 
-// import ShopItemModal from "../components/global/ShopModal";
 import ImageView from "../components/global/ImageView";
 
 import Eternity from "../assets/images/product_images/eternity.jpeg";
@@ -19,13 +18,18 @@ import Packer_Stausse from "../assets/images/product_images/packer-stausse.jpeg"
 import Gutschein from "../assets/images/product_images/gutschein.jpeg";
 import Weitblick from "../assets/images/product_images/weitblick.jpeg";
 
+import { useNavigate } from "react-router-dom";
+
 export default function Shop() {
+
+  const nav = useNavigate();
+
   const [isShowImageViewer, setIsShowImageViewer] = React.useState(false);
   const [clickCoordinates, setClickCoordinates] = React.useState(null);
 
   const bestSellers = [
     {
-      title: "Eternity",
+      title: "Eternity", /* use title as id for navigation, get data from db */
       basePrice: "€130.00",
       imageUrl: Eternity,
       categories: [
@@ -90,22 +94,16 @@ export default function Shop() {
   ]
 
   const Product = (props: any) => {
-    // const [show, setShow] = React.useState(false);
-
-    // const handleClick = () => {
-    //   setShow(!show);
-    // }
 
     return (
       <>
-        <div className={styles.product} onClick={() => { }}>
+        <div className={styles.product} onClick={() => nav(`/shop/${(props.title).toLowerCase()}`)}>
           <div style={{ backgroundImage: `url(${props.imageUrl})` }} className={styles.productImage}></div>
           <div className={styles.productTextContainer}>
             <text className={styles.productTitle}>{props.title}</text>
             <text className={styles.productPrice}>{props.basePrice === props.maxPrice ? "" : "From"} {props.basePrice}</text>
           </div>
         </div>
-        {/* <ShopItemModal title={props.title} basePrice={props.basePrice} imageUrl={props.imageUrl} show={show} /> */}
       </>
     );
   }
@@ -339,7 +337,7 @@ export default function Shop() {
                       <text className={styles.toggle} style={{ opacity: (size == "Size") ? 0.5 : 1, cursor: (size == "Size") ? "not-allowed" : "pointer" }} onClick={size == "Size" ? () => { } : quantityIncrease}>+</text>
                     </div>
                     <div className={styles.cartButton}>
-                      <text className={styles.cartButtonText}>Add To Cart <IoCart size={24} /></text>
+                      <text className={styles.cartButtonText}>Add To Bag <IoBagHandle size={24} /></text>
                     </div>
                   </div>
                 </div>
