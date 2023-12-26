@@ -334,9 +334,9 @@ export default function Shop() {
                   </div>
                   <div className={styles.twoButtonContainer}>
                     <div className={styles.quantityButton}>
-                      <text className={styles.toggle} onClick={quantityDecrease}>-</text>
+                      <text className={styles.toggle} style={{ opacity: (size == "Size") ? 0.5 : 1, cursor: (size == "Size") ? "not-allowed" : "pointer" }} onClick={size == "Size" ? () => { } : quantityDecrease}>-</text>
                       <text className={styles.quantityButtonText}>{quantity || "Quantity"}</text>
-                      <text className={styles.toggle} onClick={quantityIncrease}>+</text>
+                      <text className={styles.toggle} style={{ opacity: (size == "Size") ? 0.5 : 1, cursor: (size == "Size") ? "not-allowed" : "pointer" }} onClick={size == "Size" ? () => { } : quantityIncrease}>+</text>
                     </div>
                     <div className={styles.cartButton}>
                       <text className={styles.cartButtonText}>Add To Cart <IoCart size={24} /></text>
