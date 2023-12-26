@@ -8,10 +8,19 @@ export default function ShopItem() {
   const itemId = location.split("shop/")[2];
   const itemId_normalized = itemId.replace("%20", " ");
 
+  function toTitleCase(str) {
+    return str.replace(
+      /\w\S*/g,
+      function (txt: string) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }
+    );
+  }
+
   return (
     <main className={styles.main}>
       <div>
-        <text>{itemId_normalized}</text>
+        <text>{toTitleCase(itemId_normalized)}</text>
       </div>
       <div>
         <p>{itemId_normalized}</p>
