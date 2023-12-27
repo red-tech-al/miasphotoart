@@ -19,7 +19,7 @@ export default function Layout({ children }) {
 
   const cartItems = 1;
   const loggedIn = false;
-  const username = null; // these values won't be hardcoded later on
+  const username = null; // retrieve this data from the database
 
   return (
     <main className={styles.main}>
@@ -41,6 +41,7 @@ export default function Layout({ children }) {
           <div className={`${styles.headerContainer} ${styles.loginContainer}`}>
             <IoPersonCircle className={styles.headerIcon} />
             <text className={styles.headerText}>{loggedIn ? username : "Login"}</text>
+            {/* Show username when logged in */}
           </div>
         </Link>
       </section>
