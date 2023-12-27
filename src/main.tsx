@@ -15,9 +15,11 @@ import Pricing from './routes/Pricing';
 import Portfolio from './routes/Portfolio';
 import Shop from './routes/Shop';
 import ShopItem from './components/global/ShopItem';
+import Cart from './routes/Cart';
 import Contact from './routes/Contact';
 import About from './routes/About';
 import Imprint from './routes/Imprint';
+import Terms from './routes/Terms';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +48,11 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
+    path: "/cart",
+    element: <Cart />,
+    errorElement: <ErrorPage />,
+  },
+  {
     path: "/shop/:id",
     element: <ShopItem />,
     errorElement: <ErrorPage />,
@@ -63,6 +70,11 @@ const router = createBrowserRouter([
   {
     path: "/imprint",
     element: <Imprint />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/terms",
+    element: <Terms />,
     errorElement: <ErrorPage />,
   },
 ]);
