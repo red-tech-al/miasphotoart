@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { HashLink } from "react-router-hash-link";
 import styles from "./Layout.module.scss";
 
 import { IoAlbumsOutline, IoClose, IoBagHandle, IoPersonCircle, IoArrowBack } from "react-icons/io5";
@@ -19,7 +18,7 @@ export default function Layout({ children }) {
 
   const cartItems = 1;
   const loggedIn = false;
-  const username = null; // these values won't be hardcoded later on
+  const username = null; // retrieve this data from the database
 
   return (
     <main className={styles.main}>
@@ -35,12 +34,13 @@ export default function Layout({ children }) {
         }
         <div className={`${styles.headerContainer} ${styles.cartContainer}`} onClick={() => { }}>
           <IoBagHandle className={styles.headerIcon} />
-          <text className={styles.headerText}>You have {cartItems} {cartItems.toString() == "1" ? "item" : "items"} in your cart.</text>
+          <text className={styles.headerText}>You have {cartItems} {cartItems.toString() == "1" ? "item" : "items"} in your cart.</text> {/* Retrieve this data from the database */}
         </div>
         <Link to="/login" style={{ textDecoration: "none", color: "inherit" }}>
           <div className={`${styles.headerContainer} ${styles.loginContainer}`}>
             <IoPersonCircle className={styles.headerIcon} />
             <text className={styles.headerText}>{loggedIn ? username : "Login"}</text>
+            {/* Show username when logged in */}
           </div>
         </Link>
       </section>
