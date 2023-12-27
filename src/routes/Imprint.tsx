@@ -18,8 +18,8 @@ export default function Imprint() {
               <div className={styles.informationContainer}>
                 <div className={styles.locationContainer}>
                   <text className={styles.text}>Neubaugasse 130, 8020 Graz</text>
-                  <text className={styles.text}><b>Mobile:</b> +43 664 2072501</text>
-                  <text className={styles.text}><b>Mail:</b> info@miasphotoart.at</text>
+                  <text className={styles.text}><b>Mobile:</b> <a href="tel:+43 664 2072501" style={{ color: "inherit" }}><i>+43 664 2072501</i></a></text>
+                  <text className={styles.text}><b>Mail:</b> <a href="mailto:info@miasphotoart.at" style={{ color: "inherit" }}><i>info@miasphotoart.at</i></a></text>
                 </div>
                 <div className={styles.bankDetails}>
                   <text className={styles.informationSectionTitle}>Bank Details:</text>
@@ -39,7 +39,7 @@ export default function Imprint() {
                 <text className={styles.text}>This website does not use cookies or Google Analytics.</text>
                 <text className={styles.sectionTitle}>Your Rights</text>
                 <text className={styles.text}>Customer data is used exclusively to run the company correctly and to carry out the order requested by the customer.<br /><br />In principle, you have the rights to information, correction, deletion, restriction, data portability, revocation and objection. If you believe that the processing of your data violates data protection law or your data protection rights have been violated in any other way, you can complain to the supervisory authority. In Austria this is the data protection authority.</text>
-                <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
+                <Link style={{ textDecoration: "none", color: "inherit" }} to="/terms">
                   <i><text className={styles.text}>More Terms & Conditions</text></i>
                 </Link>
               </div>

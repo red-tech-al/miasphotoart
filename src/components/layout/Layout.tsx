@@ -24,7 +24,7 @@ export default function Layout({ children }) {
     <main className={styles.main}>
       <section className={styles.header}>
         {
-          (location.includes("/shop/") || location === "/login")
+          (location.includes("/shop/") || location === "/login" || location === "/cart")
             ?
             <div className={`${styles.headerContainer} ${styles.backContainer}`} onClick={() => nav(-1)}>
               <IoArrowBack className={styles.headerIcon} />
@@ -32,10 +32,12 @@ export default function Layout({ children }) {
             :
             <div style={{ display: "none" }}></div>
         }
-        <div className={`${styles.headerContainer} ${styles.cartContainer}`} onClick={() => { }}>
-          <IoBagHandle className={styles.headerIcon} />
-          <text className={styles.headerText}>You have {cartItems} {cartItems.toString() == "1" ? "item" : "items"} in your cart.</text> {/* Retrieve this data from the database */}
-        </div>
+        <Link to="/cart" style={{ textDecoration: "none", color: "inherit" }}>
+          <div className={`${styles.headerContainer} ${styles.cartContainer}`}>
+            <IoBagHandle className={styles.headerIcon} />
+            <text className={styles.headerText}>You have {cartItems} {cartItems.toString() == "1" ? "item" : "items"} in your cart.</text> {/* Retrieve this data from the database */}
+          </div>
+        </Link>
         <Link to="/login" style={{ textDecoration: "none", color: "inherit" }}>
           <div className={`${styles.headerContainer} ${styles.loginContainer}`}>
             <IoPersonCircle className={styles.headerIcon} />
@@ -45,7 +47,7 @@ export default function Layout({ children }) {
         </Link>
       </section>
       {
-        (location.includes("/shop/") || location === "/login")
+        (location.includes("/shop/") || location === "/login" || location === "/cart")
           ?
           <div style={{ display: "none" }}></div>
           :
