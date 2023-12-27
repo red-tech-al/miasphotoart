@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { HashLink } from "react-router-hash-link";
 import styles from "./Layout.module.scss";
 
 import { IoAlbumsOutline, IoClose, IoBagHandle, IoPersonCircle, IoArrowBack } from "react-icons/io5";
