@@ -27,32 +27,37 @@ const router = createBrowserRouter([
   {
     path: "/pricing",
     element: <Pricing />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/portfolio",
     element: <Portfolio />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/shop",
     element: <Shop />,
-    children: [
-      {
-        path: "/shop/:id",
-        element: <ShopItem />,
-      },
-    ]
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/shop/:id",
+    element: <ShopItem />,
+    // errorElement: <ErrorPage />,
   },
   {
     path: "/contact",
     element: <Contact />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/about",
     element: <About />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/imprint",
     element: <Imprint />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
