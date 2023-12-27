@@ -9,10 +9,12 @@ import {
 import Root from "./routes/Root";
 import ErrorPage from './ErrorPage';
 import SplashScreen from './splashscreen';
+import Login from './routes/Login';
 
 import Pricing from './routes/Pricing';
 import Portfolio from './routes/Portfolio';
 import Shop from './routes/Shop';
+import ShopItem from './components/global/ShopItem';
 import Contact from './routes/Contact';
 import About from './routes/About';
 import Imprint from './routes/Imprint';
@@ -24,28 +26,44 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
+    path: "/login",
+    element: <Login />,
+    errorElement: <ErrorPage />,
+  },
+  {
     path: "/pricing",
     element: <Pricing />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/portfolio",
     element: <Portfolio />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/shop",
     element: <Shop />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/shop/:id",
+    element: <ShopItem />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/contact",
     element: <Contact />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/about",
     element: <About />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/imprint",
     element: <Imprint />,
+    errorElement: <ErrorPage />,
   },
 ]);
 

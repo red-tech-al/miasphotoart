@@ -2,6 +2,59 @@
   transition: transform 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
 }
 
+.header {
+  position: fixed;
+  right: 2.5%;
+  top: 3.2vh;
+  z-index: 1000000;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1vw;
+  transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+}
+
+.headerContainer {
+  background-color: rgb(91, 105, 134);
+  color: rgb(225, 213, 189);
+  border-radius: 50px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+  padding: 0.6rem;
+  transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+  transition: width;
+  cursor: pointer;
+}
+
+.backContainer {
+  position: fixed;
+  left: 2.5%;
+  top: 3.2vh;
+}
+
+.headerText {
+  display: none;
+  opacity: 0;
+  transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+  font-weight: 700;
+}
+
+.headerContainer:hover {
+  .headerText {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.headerIcon {
+  font-size: 1.5rem;
+  transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+}
+
 .nav {
   z-index: 1;
   position: fixed;
@@ -19,8 +72,6 @@
   bottom: 1.25vw;
   right: 1.25vw;
   z-index: 100;
-  -webkit-mask: linear-gradient(to bottom, transparent, #fff 200px);
-  mask: linear-gradient(to bottom, transparent, #fff 200px);
 }
 
 .topButton {

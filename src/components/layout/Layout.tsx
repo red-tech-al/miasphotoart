@@ -1,14 +1,15 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+// import { HashLink } from "react-router-hash-link";
 import styles from "./Layout.module.scss";
 
-import { IoAlbumsOutline, IoClose, IoArrowUp } from "react-icons/io5";
+import { IoAlbumsOutline, IoClose, IoBagHandle, IoPersonCircle, IoArrowBack } from "react-icons/io5";
 
 import { Fade } from "react-reveal"
 
 export default function Layout({ children }) {
   const location = useLocation().pathname;
+  const nav = useNavigate();
 
   const [isOpenNav, setIsOpenNav] = React.useState("false");
 
@@ -16,16 +17,42 @@ export default function Layout({ children }) {
     setIsOpenNav(isOpenNav === "true" ? "false" : "true");
   }
 
+  const cartItems = 1;
+  const loggedIn = false;
+  const username = null; // these values won't be hardcoded later on
+
   return (
     <main className={styles.main}>
-      <HashLink smooth to="#">
-        <div className={styles.fixedContainer}>
-          <IoArrowUp className={styles.topButton} />
+      <section className={styles.header}>
+        {
+          (location.includes("/shop/") || location === "/login")
+            ?
+            <div className={`${styles.headerContainer} ${styles.backContainer}`} onClick={() => nav(-1)}>
+              <IoArrowBack className={styles.headerIcon} />
+            </div>
+            :
+            <div style={{ display: "none" }}></div>
+        }
+        <div className={`${styles.headerContainer} ${styles.cartContainer}`} onClick={() => { }}>
+          <IoBagHandle className={styles.headerIcon} />
+          <text className={styles.headerText}>You have {cartItems} {cartItems.toString() == "1" ? "item" : "items"} in your cart.</text>
         </div>
-      </HashLink>
-      <button className={styles.navToggle} onClick={() => toggleNav()} style={{ backgroundColor: `rgb(${(isOpenNav === "false") ? "91, 105, 134" : "225, 213, 189"})` }}>
-        {(isOpenNav === "false") ? <IoAlbumsOutline className={styles.icon} style={{ color: "rgb(241, 235, 223)" }} /> : <IoClose className={styles.icon} style={{ color: "rgb(32, 25, 16)" }} />}
-      </button>
+        <Link to="/login" style={{ textDecoration: "none", color: "inherit" }}>
+          <div className={`${styles.headerContainer} ${styles.loginContainer}`}>
+            <IoPersonCircle className={styles.headerIcon} />
+            <text className={styles.headerText}>{loggedIn ? username : "Login"}</text>
+          </div>
+        </Link>
+      </section>
+      {
+        (location.includes("/shop/") || location === "/login")
+          ?
+          <div style={{ display: "none" }}></div>
+          :
+          <button className={styles.navToggle} onClick={() => toggleNav()} style={{ backgroundColor: `rgb(${(isOpenNav === "false") ? "91, 105, 134" : "225, 213, 189"})` }}>
+            {(isOpenNav === "false") ? <IoAlbumsOutline className={styles.icon} style={{ color: "rgb(241, 235, 223)" }} /> : <IoClose className={styles.icon} style={{ color: "rgb(32, 25, 16)" }} />}
+          </button>
+      }
       <section className={styles.content} style={{ transform: `translateY(${(isOpenNav === "false") ? "0vh" : "-45vh"})` }} onClick={() => setIsOpenNav("false")}>
         {children}
       </section>
