@@ -30,6 +30,12 @@
   cursor: pointer;
 }
 
+.backContainer {
+  position: fixed;
+  left: 2.5%;
+  top: 3.2vh;
+}
+
 .headerText {
   display: none;
   opacity: 0;

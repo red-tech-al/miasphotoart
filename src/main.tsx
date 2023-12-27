@@ -9,19 +9,25 @@ import {
 import Root from "./routes/Root";
 import ErrorPage from './ErrorPage';
 import SplashScreen from './splashscreen';
+import Login from './routes/Login';
 
 import Pricing from './routes/Pricing';
 import Portfolio from './routes/Portfolio';
 import Shop from './routes/Shop';
+import ShopItem from './components/global/ShopItem';
 import Contact from './routes/Contact';
 import About from './routes/About';
 import Imprint from './routes/Imprint';
-import ShopItem from './components/global/ShopItem';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
     errorElement: <ErrorPage />,
   },
   {
@@ -42,7 +48,7 @@ const router = createBrowserRouter([
   {
     path: "/shop/:id",
     element: <ShopItem />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/contact",
