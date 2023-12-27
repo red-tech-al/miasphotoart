@@ -20,6 +20,7 @@ export default function Contact() {
       setSubject("");
       setBody("");
     }
+    // add this data to the database
   }
 
   const [flipped, setFlipped] = React.useState(false);
@@ -60,15 +61,15 @@ export default function Contact() {
               <Fade ssrFadeout duration={1000} bottom>
                 <div className={styles.officeLocation}>
                   <text className={styles.officeLocationText}>Graz - Head Office</text>
-                  <text className={styles.contactDetails}><span className={styles.bold}>Email:</span> info@miasphotoart.at</text>
-                  <text className={styles.contactDetails}><span className={styles.bold}>Phone:</span> +43 664 2072501</text>
+                  <text className={styles.contactDetails}><span className={styles.bold}>Email:</span> <a href="mailto:info@miasphotoart.at" style={{ color: "inherit" }}><i>info@miasphotoart.at</i></a></text>
+                  <text className={styles.contactDetails}><span className={styles.bold}>Phone:</span> <a href="tel:+43 664 2072501" style={{ color: "inherit", textDecoration: "none" }}><i>+43 664 2072501</i></a></text>
                 </div>
               </Fade>
               <Fade ssrFadeout duration={1600} bottom>
                 <div className={styles.officeLocation} style={{ textAlign: "right", alignItems: "flex-end" }}>
                   <text className={styles.officeLocationText}>Klagenfurt</text>
-                  <text className={styles.contactDetails}><span className={styles.bold}>Email:</span> klagenfurt@miasphotoart.at</text>
-                  <text className={styles.contactDetails}><span className={styles.bold}>Phone:</span> +43 664 2072501</text>
+                  <text className={styles.contactDetails}><span className={styles.bold}>Email:</span> <a href="mailto:klagenfurt@miasphotoart.at" style={{ color: "inherit" }}><i>klagenfurt@miasphotoart.at</i></a></text>
+                  <text className={styles.contactDetails}><span className={styles.bold}>Phone:</span> <a href="tel:+43 664 2072501" style={{ color: "inherit", textDecoration: "none" }}><i>+43 664 2072501</i></a></text>
                 </div>
               </Fade>
             </div>

@@ -35,7 +35,7 @@ export default function Layout({ children }) {
         }
         <div className={`${styles.headerContainer} ${styles.cartContainer}`} onClick={() => { }}>
           <IoBagHandle className={styles.headerIcon} />
-          <text className={styles.headerText}>You have {cartItems} {cartItems.toString() == "1" ? "item" : "items"} in your cart.</text>
+          <text className={styles.headerText}>You have {cartItems} {cartItems.toString() == "1" ? "item" : "items"} in your cart.</text> {/* Retrieve this data from the database */}
         </div>
         <Link to="/login" style={{ textDecoration: "none", color: "inherit" }}>
           <div className={`${styles.headerContainer} ${styles.loginContainer}`}>
