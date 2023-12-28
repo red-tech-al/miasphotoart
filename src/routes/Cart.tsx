@@ -52,6 +52,17 @@ export default function Cart() {
               <CartView title={bestSellers[0].title} imageUrl={bestSellers[0].imageUrl} description="lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum." price={bestSellers[0].basePrice} />
               <CartView title={bestSellers[0].title} imageUrl={bestSellers[0].imageUrl} description="lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum." price={bestSellers[0].basePrice} />
               <CartView title={bestSellers[0].title} imageUrl={bestSellers[0].imageUrl} description="lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum." price={bestSellers[0].basePrice} />
+              <div className={styles.infoContainer}>
+                <div className={styles.leftInfoContainer}>
+                  <input className={styles.voucherInput} placeholder="Voucher Code" />
+                  <div className={styles.voucherButton} onClick={() => { }}>
+                    <text className={styles.voucherButtonText}>Apply Voucher</text>
+                  </div>
+                </div>
+                <div className={styles.rightInfoContainer}>
+                  <text className={styles.infoText}>Total: <span className={styles.bold}>€390</span></text>
+                </div>
+              </div>
             </section>
           </Fade>
           <Fade right duration={1000} ssrFadeout>
