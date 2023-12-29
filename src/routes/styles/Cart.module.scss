@@ -37,6 +37,7 @@
 
 .leftInfoContainer {
   gap: 1.25vw;
+  align-items: baseline;
 }
 
 .voucherInput {
@@ -45,6 +46,8 @@
   outline: none;
   border: none;
   border-bottom: 1.6px solid rgb(225, 213, 189);
+  padding-bottom: 8px;
+  font-size: max(0.1em, min(1em, calc(100vw * 4 / 75)));
 }
 
 .voucherInput::placeholder {
