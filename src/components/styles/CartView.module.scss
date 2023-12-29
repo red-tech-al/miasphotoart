@@ -1,0 +1,58 @@
+.main {
+  width: 100%;
+  height: 17.5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 3.2px solid rgb(32, 25, 16);
+  border-radius: 20px;
+}
+
+.leftContainer {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.25vw;
+}
+
+.rightContainer {
+  flex: 1;
+  justify-content: flex-end;
+  text-align: right;
+  padding-right: 1.25vw;
+}
+
+.imageContainer,
+.textContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.image {
+  height: 17.5vh;
+  aspect-ratio: 1;
+  border-top-left-radius: 16.8px;
+  border-bottom-left-radius: 16.8px;
+}
+
+.textContainer {
+  width: 17.5vh;
+  max-height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2vh;
+}
+
+.title {
+  font-weight: 800;
+  font-size: max(0.13em, min(1.3em, calc(100vw * 4 / 75)));
+}
+
+.price {
+  font-weight: 800;
+  font-size: max(0.13em, min(1.3em, calc(100vw * 4 / 75)));
+}

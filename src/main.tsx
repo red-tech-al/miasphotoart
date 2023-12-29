@@ -14,7 +14,7 @@ import Login from './routes/Login';
 import Pricing from './routes/Pricing';
 import Portfolio from './routes/Portfolio';
 import Shop from './routes/Shop';
-import ShopItem from './components/global/ShopItem';
+import ShopItem from './components/ShopItem';
 import Cart from './routes/Cart';
 import Contact from './routes/Contact';
 import About from './routes/About';

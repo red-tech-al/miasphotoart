@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./styles/ShopItem.module.scss";
-import Layout from "../layout/Layout";
+import Layout from "./layout/Layout";
 
 import { IoBagHandle, IoCaretDown } from "react-icons/io5";
 import { Fade } from "react-reveal";
 import { useParams } from "react-router-dom";
 
-import Eternity from "../../assets/images/product_images/eternity.jpeg";
+import Eternity from "../assets/images/product_images/eternity.jpeg";
 
 export default function ShopItem() {
 
