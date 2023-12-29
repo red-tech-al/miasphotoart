@@ -7,6 +7,8 @@ import CartView from "../components/CartView";
 
 import Eternity from "../assets/images/product_images/eternity.jpeg";
 
+import validateEmail from "../context/validateEmail";
+
 export default function Cart() {
 
   const bestSellers = [
@@ -43,6 +45,9 @@ export default function Cart() {
     }
   ]
 
+  const email = "davidguri@yahoo.co";
+  const valid = JSON.stringify(validateEmail(email));
+
   return (
     <Layout>
       <Fade duration={450} ssrFadeout>
@@ -67,7 +72,7 @@ export default function Cart() {
           </Fade>
           <Fade right duration={1000} ssrFadeout>
             <section className={styles.checkout}>
-              <text className={styles.checkoutTitle}>Checkout</text>
+              <text className={styles.checkoutTitle}>Checkout {valid}</text>
             </section>
           </Fade>
         </main>
