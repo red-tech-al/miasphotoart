@@ -16,7 +16,7 @@ export default function Layout({ children }) {
     setIsOpenNav(isOpenNav === "true" ? "false" : "true");
   }
 
-  const cartItems = 1;
+  const cartItems = 3;
   const loggedIn = false;
   const username = null; // retrieve this data from the database
 
