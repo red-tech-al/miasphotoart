@@ -8,6 +8,9 @@ import CartView from "../components/CartView";
 import Eternity from "../assets/images/product_images/eternity.jpeg";
 
 import validateEmail from "../context/validateEmail";
+import validatePhone from "../context/validatePhone";
+import validateFname from "../context/validateFname";
+import filterWords from "../context/wordFilter";
 
 export default function Cart() {
 
@@ -46,6 +49,13 @@ export default function Cart() {
   ]
 
   const email = "davidguri@yahoo.co";
+  const phone = "0707123456";
+  const fname = "David";
+  const lname = "Guri";
+  const custom_message = "Fuck you bro";
+  const clean_message = filterWords(custom_message);
+  const valid_fname = JSON.stringify(validateFname(fname, lname))
+  const valid_phone = JSON.stringify(validatePhone(phone, 'SE'));
   const valid = JSON.stringify(validateEmail(email));
 
   return (
@@ -72,7 +82,7 @@ export default function Cart() {
           </Fade>
           <Fade right duration={1000} ssrFadeout>
             <section className={styles.checkout}>
-              <text className={styles.checkoutTitle}>Checkout {valid}</text>
+              <text className={styles.checkoutTitle}>Checkout {valid_phone} {valid} {valid_fname} {clean_message}</text>
             </section>
           </Fade>
         </main>
