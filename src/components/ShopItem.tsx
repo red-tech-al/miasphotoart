@@ -13,8 +13,8 @@ export default function ShopItem() {
   const bestSellers = [
     {
       title: "Eternity", /* use title as id for navigation, get data from db */
-      basePrice: "€130.00",
-      secondPrice: "€370.00",
+      basePrice: "€130",
+      secondPrice: "€370",
       description: "Old Alpine House, Austria. Exclusively limited to a collection of 200 meticulously crafted pieces, each one bearing a unique hand-signed signature, adding a touch of individuality and exclusivity to every item.",
       imageUrl: Eternity,
       categories: [
