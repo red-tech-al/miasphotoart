@@ -50,7 +50,7 @@ export default function Layout({
             <div style={{ display: "none" }}></div>
         }
         <Alert isVisible={isVisible || false} message={message || { title: "", body: "" }} action={action || { title: "", link: "" }} />
-        <ImageView show={isShowImageViewer} close={isClose} imageUrl={image.url} imageTitle={image.title} />
+        <ImageView show={isShowImageViewer || false} close={isClose || null} image={{ url: image.url || "", title: image.title || "" }} />
         <Link to="/cart" style={{ textDecoration: "none", color: "inherit" }}>
           <div className={`${styles.headerContainer} ${styles.cartContainer}`}>
             <IoBagHandle className={styles.headerIcon} />
