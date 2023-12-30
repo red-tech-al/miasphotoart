@@ -30,7 +30,7 @@ export default function Contact() {
   }
 
   return (
-    <Layout>
+    <Layout isVisible={undefined} message={undefined} action={undefined}>
       <main className={styles.main}>
         <Fade ssrFadeout duration={1200} left>
           <div className={styles.leftContainer}>

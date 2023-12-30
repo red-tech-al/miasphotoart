@@ -2,11 +2,28 @@ import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "./Layout.module.scss";
 
-import { IoAlbumsOutline, IoClose, IoBagHandle, IoPersonCircle, IoArrowBack } from "react-icons/io5";
+import {
+  IoAlbumsOutline,
+  IoClose,
+  IoBagHandle,
+  IoPersonCircle,
+  IoArrowBack
+} from "react-icons/io5";
 
-import { Fade } from "react-reveal"
+import { Fade } from "react-reveal";
+import Alert from "../global/Alert";
+import ImageView from "../global/ImageView";
 
-export default function Layout({ children }) {
+export default function Layout({
+  children,
+  isVisible,
+  message,
+  action,
+  isShowImageViewer,
+  isClose,
+  image
+}) {
+
   const location = useLocation().pathname;
   const nav = useNavigate();
 
@@ -32,6 +49,8 @@ export default function Layout({ children }) {
             :
             <div style={{ display: "none" }}></div>
         }
+        <Alert isVisible={isVisible || false} message={message || { title: "", body: "" }} action={action || { title: "", link: "" }} />
+        <ImageView show={isShowImageViewer} close={isClose} imageUrl={image.url} imageTitle={image.title} />
         <Link to="/cart" style={{ textDecoration: "none", color: "inherit" }}>
           <div className={`${styles.headerContainer} ${styles.cartContainer}`}>
             <IoBagHandle className={styles.headerIcon} />

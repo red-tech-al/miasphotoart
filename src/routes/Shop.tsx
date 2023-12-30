@@ -6,8 +6,6 @@ import { Fade } from "react-reveal";
 
 import { IoBagHandle, IoCaretDown } from "react-icons/io5";
 
-import ImageView from "../components/global/ImageView";
-
 import Eternity from "../assets/images/product_images/eternity.jpeg";
 import Coaching from "../assets/images/product_images/photo-coaching.jpeg";
 import Elefant from "../assets/images/product_images/elefant.jpeg";
@@ -25,7 +23,6 @@ export default function Shop() {
   const nav = useNavigate();
 
   const [isShowImageViewer, setIsShowImageViewer] = React.useState(false);
-  const [clickCoordinates, setClickCoordinates] = React.useState(null);
 
   const bestSellers = [
     {
@@ -292,21 +289,22 @@ export default function Shop() {
     setSize(e.target.value);
   }
 
+  const imageProps = {
+    title: `${bestSellers[0].title}`,
+    url: `${bestSellers[0].imageUrl}`
+  }
+
   return (
-    <Layout>
+    <Layout isVisible={undefined} message={undefined} action={undefined} isShowImageViewer={isShowImageViewer} isClose={() => setIsShowImageViewer(false)} image={imageProps}>
       <Fade ssrFadeout duration={460}>
         <main className={styles.main}>
           <section className={styles.heroSection}>
             <text className={styles.heroText}>Shop</text>
           </section>
-          <ImageView show={isShowImageViewer} close={() => setIsShowImageViewer(false)} imageUrl={bestSellers[0].imageUrl} imageTitle={bestSellers[0].title} clickCoordinates={clickCoordinates} />
           <section className={styles.openProduct}>
             <Fade ssrFadeout left duration={1200}>
               <div className={styles.openProductLeftContainer}>
-                <div className={styles.openProductImage} style={{ backgroundImage: `url(${bestSellers[0].imageUrl})` }} onClick={(e) => {
-                  setIsShowImageViewer(true);
-                  setClickCoordinates({ clientX: e.clientX, clientY: e.clientY });
-                }} />
+                <div className={styles.openProductImage} style={{ backgroundImage: `url(${bestSellers[0].imageUrl})` }} onClick={() => setIsShowImageViewer(true)} />
               </div>
             </Fade>
             <Fade ssrFadeout right duration={1200}>
