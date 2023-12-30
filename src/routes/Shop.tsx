@@ -293,7 +293,7 @@ export default function Shop() {
   }
 
   return (
-    <Layout>
+    <Layout isVisible={undefined} message={undefined} action={undefined}>
       <Fade ssrFadeout duration={460}>
         <main className={styles.main}>
           <section className={styles.heroSection}>

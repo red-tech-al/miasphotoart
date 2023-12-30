@@ -3,7 +3,7 @@ import Layout from "../components/layout/Layout";
 
 export default function Terms() {
   return (
-    <Layout>
+    <Layout isVisible={undefined} message={undefined} action={undefined}>
       <main className={styles.main}>
         Terms
       </main>

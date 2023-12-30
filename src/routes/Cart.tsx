@@ -57,9 +57,10 @@ export default function Cart() {
   const valid_fname = JSON.stringify(validateFname(fname, lname))
   const valid_phone = JSON.stringify(validatePhone(phone, 'SE'));
   const valid = JSON.stringify(validateEmail(email));
+  // testing out the validation functions
 
   return (
-    <Layout>
+    <Layout isVisible={undefined} message={undefined} action={undefined}>
       <Fade duration={450} ssrFadeout>
         <main className={styles.main}>
           <Fade left duration={1000} ssrFadeout>

@@ -82,8 +82,15 @@ export default function ShopItem() {
     );
   }
 
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  const toggleVisibility = () => {
+    setIsVisible(true);
+    setTimeout(() => setIsVisible(false), 8500)
+  }
+
   return (
-    <Layout>
+    <Layout isVisible={isVisible} message={{ title: `${itemId_normalized} Successfully Added To Cart!`, body: "You can check out your cart by clicking the button below." }} action={{ title: "Go To Cart", link: "/cart" }}>
       <Fade duration={450} ssrFadeout>
         <main className={styles.main}>
           <section className={styles.productSection}>
@@ -119,7 +126,7 @@ export default function ShopItem() {
                       <text className={styles.quantityButtonText}>{quantity || "Quantity"}</text>
                       <text className={styles.toggle} style={{ opacity: (size == "Size") ? 0.5 : 1, cursor: (size == "Size") ? "not-allowed" : "pointer" }} onClick={size == "Size" ? () => { } : quantityIncrease}>+</text>
                     </div>
-                    <div className={styles.cartButton}>
+                    <div className={styles.cartButton} onClick={toggleVisibility}>
                       <text className={styles.cartButtonText}>Add To Bag <IoBagHandle size={24} /></text>
                     </div>
                   </div>
