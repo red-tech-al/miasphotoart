@@ -12,8 +12,18 @@ import {
 
 import { Fade } from "react-reveal";
 import Alert from "../global/Alert";
+import ImageView from "../global/ImageView";
 
-export default function Layout({ children, isVisible, message, action }) {
+export default function Layout({
+  children,
+  isVisible,
+  message,
+  action,
+  isShowImageViewer,
+  isClose,
+  image
+}) {
+
   const location = useLocation().pathname;
   const nav = useNavigate();
 
@@ -40,6 +50,7 @@ export default function Layout({ children, isVisible, message, action }) {
             <div style={{ display: "none" }}></div>
         }
         <Alert isVisible={isVisible || false} message={message || { title: "", body: "" }} action={action || { title: "", link: "" }} />
+        <ImageView show={isShowImageViewer} close={isClose} imageUrl={image.url} imageTitle={image.title} />
         <Link to="/cart" style={{ textDecoration: "none", color: "inherit" }}>
           <div className={`${styles.headerContainer} ${styles.cartContainer}`}>
             <IoBagHandle className={styles.headerIcon} />
