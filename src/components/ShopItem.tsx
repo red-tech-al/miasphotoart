@@ -90,7 +90,7 @@ export default function ShopItem() {
   }
 
   return (
-    <Layout isVisible={isVisible} message={{ title: `${itemId_normalized} Successfully Added To Cart!`, body: "You can check out your cart by clicking the button below." }} action={{ title: "Go To Cart", link: "/cart" }} isShowImageViewer={undefined} isClose={undefined} image={undefined}>
+    <Layout isVisible={isVisible} message={{ title: `${itemId_normalized} Successfully Added To Cart!`, body: "You can check out your cart by clicking the button below." }} action={{ title: "Go To Cart", link: "/cart" }} isShowImageViewer={undefined} isClose={() => undefined} imageTitle={undefined} imageUrl={undefined}>
       <Fade duration={450} ssrFadeout>
         <main className={styles.main}>
           <section className={styles.productSection}>

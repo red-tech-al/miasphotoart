@@ -21,7 +21,8 @@ export default function Layout({
   action,
   isShowImageViewer,
   isClose,
-  image
+  imageUrl,
+  imageTitle,
 }) {
 
   const location = useLocation().pathname;
@@ -50,7 +51,7 @@ export default function Layout({
             <div style={{ display: "none" }}></div>
         }
         <Alert isVisible={isVisible || false} message={message || { title: "", body: "" }} action={action || { title: "", link: "" }} />
-        <ImageView show={isShowImageViewer || false} close={isClose || null} image={{ url: image.url || "", title: image.title || "" }} />
+        <ImageView show={isShowImageViewer || false} close={isClose || null} image={{ url: imageUrl || "", title: imageTitle || "" }} />
         <Link to="/cart" style={{ textDecoration: "none", color: "inherit" }}>
           <div className={`${styles.headerContainer} ${styles.cartContainer}`}>
             <IoBagHandle className={styles.headerIcon} />

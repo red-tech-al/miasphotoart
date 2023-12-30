@@ -18,7 +18,7 @@ export default function Login() {
   }
 
   return (
-    <Layout isVisible={undefined} message={undefined} action={undefined}>
+    <Layout isVisible={undefined} message={undefined} action={undefined} isShowImageViewer={undefined} isClose={undefined} imageTitle={undefined} imageUrl={undefined}>
       <Fade duration={450} ssrFadeout>
         <main className={styles.main}>
           <form className={styles.contactForm}>

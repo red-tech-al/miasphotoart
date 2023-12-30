@@ -295,7 +295,7 @@ export default function Shop() {
   }
 
   return (
-    <Layout isVisible={undefined} message={undefined} action={undefined} isShowImageViewer={isShowImageViewer} isClose={() => setIsShowImageViewer(false)} image={imageProps}>
+    <Layout isVisible={undefined} message={undefined} action={undefined} isShowImageViewer={isShowImageViewer} isClose={() => setIsShowImageViewer(false)} imageUrl={imageProps.url} imageTitle={imageProps.title}>
       <Fade ssrFadeout duration={460}>
         <main className={styles.main}>
           <section className={styles.heroSection}>

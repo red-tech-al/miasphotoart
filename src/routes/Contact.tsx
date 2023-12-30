@@ -30,7 +30,7 @@ export default function Contact() {
   }
 
   return (
-    <Layout isVisible={undefined} message={undefined} action={undefined}>
+    <Layout isVisible={undefined} message={undefined} action={undefined} isShowImageViewer={undefined} isClose={undefined} imageTitle={undefined} imageUrl={undefined}>
       <main className={styles.main}>
         <Fade ssrFadeout duration={1200} left>
           <div className={styles.leftContainer}>

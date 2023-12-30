@@ -4,7 +4,7 @@ import Layout from "../components/layout/Layout";
 export default function Root() {
   return (
     <>
-      <Layout>
+      <Layout isVisible={undefined} message={undefined} action={undefined} isShowImageViewer={undefined} isClose={undefined} imageTitle={undefined} imageUrl={undefined}>
         <main className={styles.main}>
           <section className={styles.heroSection}>
             Root
