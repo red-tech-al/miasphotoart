@@ -5,7 +5,11 @@ import { Fade } from "react-reveal";
 
 import CartView from "../components/CartView";
 
+import { IoCloseCircle } from "react-icons/io5";
+
 import Eternity from "../assets/images/product_images/eternity.jpeg";
+import Coaching from "../assets/images/product_images/photo-coaching.jpeg";
+import Muschel from "../assets/images/product_images/muschel.jpeg";
 
 // import validateEmail from "../context/validateEmail";
 // import validatePhone from "../context/validatePhone";
@@ -17,9 +21,7 @@ export default function Cart() {
   const bestSellers = [
     {
       title: "Eternity", /* use title as id for navigation, get data from db */
-      basePrice: "€130.00",
-      secondPrice: "€370.00",
-      description: "Old Alpine House, Austria. Exclusively limited to a collection of 200 meticulously crafted pieces, each one bearing a unique hand-signed signature, adding a touch of individuality and exclusivity to every item.",
+      basePrice: "€130",
       imageUrl: Eternity,
       categories: [
         {
@@ -45,7 +47,41 @@ export default function Cart() {
           price: "€370 (VAT Incl., Shipping Costs Excl.)"
         },
       ]
-    }
+    },
+    {
+      title: "Mindful Photo Coaching",
+      basePrice: "€288",
+      maxPrice: "€288",
+      imageUrl: Coaching,
+      categories: [
+        {
+          title: "Landscape",
+        },
+        {
+          title: "Nature",
+        },
+        {
+          title: "Canvas",
+        },
+      ]
+    },
+    {
+      title: "Present",
+      basePrice: "€130",
+      maxPrice: "€370",
+      imageUrl: Muschel,
+      categories: [
+        {
+          title: "Landscape",
+        },
+        {
+          title: "Nature",
+        },
+        {
+          title: "Canvas",
+        },
+      ]
+    },
   ]
 
   return (
@@ -54,9 +90,16 @@ export default function Cart() {
         <main className={styles.main}>
           <Fade left duration={1000} ssrFadeout>
             <section className={styles.items}>
-              <CartView title={bestSellers[0].title} imageUrl={bestSellers[0].imageUrl} description="lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum." price={bestSellers[0].basePrice} />
-              <CartView title={bestSellers[0].title} imageUrl={bestSellers[0].imageUrl} description="lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum." price={bestSellers[0].basePrice} />
-              <CartView title={bestSellers[0].title} imageUrl={bestSellers[0].imageUrl} description="lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum." price={bestSellers[0].basePrice} />
+              {bestSellers.map((bestSeller, i) => {
+                return (
+                  <div className={styles.cartRow}>
+                    <div className={styles.removeContainer}>
+                      <IoCloseCircle className={styles.removeIcon} onClick={() => { }} />
+                    </div>
+                    <CartView key={i} title={bestSeller.title} imageUrl={bestSeller.imageUrl} description="lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum." price={bestSeller.basePrice} />
+                  </div>
+                )
+              })}
               <div className={styles.infoContainer}>
                 <div className={styles.leftInfoContainer}>
                   <input className={styles.voucherInput} placeholder="Voucher Code" />
@@ -65,7 +108,7 @@ export default function Cart() {
                   </div>
                 </div>
                 <div className={styles.rightInfoContainer}>
-                  <text className={styles.infoText}>Total: <span className={styles.bold}>€390</span></text>
+                  <text className={styles.infoText}>Total: <span className={styles.bold}>€548</span></text>
                 </div>
               </div>
             </section>
