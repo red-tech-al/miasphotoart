@@ -67,3 +67,25 @@
   border: 3.2px solid rgb(32, 25, 16);
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.64);
 }
+
+@media (max-width: 1200px) {
+  .contactForm {
+    width: 80%;
+  }
+
+  .pageTitle {
+    font-size: max(4em, min(40em, calc(100vw * 4 / 75)));
+    line-height: 1.1;
+    padding-bottom: 1vh;
+  }
+
+  .contactFormInput,
+  .contactFormTextarea {
+    padding-block: 1.5vh;
+    padding-inline: 3.2vw;
+  }
+
+  .contactSubmitButton {
+    width: 100%;
+  }
+}

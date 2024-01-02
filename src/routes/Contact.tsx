@@ -6,7 +6,7 @@ import ContactImage from "../assets/images/contact_image.jpeg";
 
 import { Fade } from "react-reveal";
 
-import filterWords from "../context/wordFilter";
+// import filterWords from "../context/wordFilter";
 import validateEmail from "../context/validateEmail";
 import validateFname from "../context/validateFname";
 
@@ -14,8 +14,8 @@ export default function Contact() {
 
   const [fname, setFname] = React.useState("");
   const [email, setEmail] = React.useState("");
-  const [subject, setSubject] = React.useState(filterWords(""));
-  const [body, setBody] = React.useState(filterWords(""));
+  const [subject, setSubject] = React.useState("");
+  const [body, setBody] = React.useState("");
 
   const contactHandler = () => {
     if (validateFname(fname, fname) && validateEmail(email) && subject) {

@@ -45,7 +45,7 @@ const router = createBrowserRouter([
   {
     path: "/shop",
     element: <Shop />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/cart",
@@ -55,12 +55,12 @@ const router = createBrowserRouter([
   {
     path: "/shop/:id",
     element: <ShopItem />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/contact",
     element: <Contact />,
-    errorElement: <ErrorPage />,
+    // errorElement: <ErrorPage />,
   },
   {
     path: "/about",
