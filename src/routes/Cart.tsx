@@ -82,7 +82,7 @@ export default function Cart() {
         },
       ]
     },
-  ]
+  ] // get these values from db
 
   return (
     <Layout isVisible={undefined} message={undefined} action={undefined} isShowImageViewer={undefined} isClose={undefined} imageTitle={undefined} imageUrl={undefined}>

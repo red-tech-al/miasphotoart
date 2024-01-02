@@ -104,7 +104,7 @@ export default function ShopItem() {
                 <div className={styles.openProductTitleContainer}>
                   <text className={styles.openProductTitle}>{itemId_normalized}</text>
                   <text className={styles.openProductSubtitle}>{
-                    (size === bestSellers[0].size[0].value) ? `${(quantity == 0) ? bestSellers[0].basePrice : "€" + (130 * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === bestSellers[0].size[1].value) ? `${(quantity == 0) ? bestSellers[0].secondPrice : "€" + (370 * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === "Size") && `Starting From ${bestSellers[0].basePrice}`
+                    (size === bestSellers[0].size[0].value) ? `${(quantity == 0) ? bestSellers[0].basePrice : "€" + (parseFloat(bestSellers[0].basePrice) * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === bestSellers[0].size[1].value) ? `${(quantity == 0) ? bestSellers[0].secondPrice : "€" + (parseFloat(bestSellers[0].secondPrice) * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === "Size") && `Starting From ${bestSellers[0].basePrice}` // get values from db
                   }
                   </text>
                   <div className={styles.openProductDescriptionContainer}>
@@ -116,7 +116,7 @@ export default function ShopItem() {
                     <select className={styles.sizeSelect} onChange={handleSizeSelection} id="sizeSelect" value={size}>
                       <option value="Size">Size</option>
                       <option value="60x40">60cm x 40cm</option>
-                      <option value="150x100">150cm x 100cm</option>
+                      <option value="150x100">150cm x 100cm</option> {/* Get values from db */}
                     </select>
                     <IoCaretDown size={25} />
                   </div>
