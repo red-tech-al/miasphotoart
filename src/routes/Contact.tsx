@@ -6,6 +6,10 @@ import ContactImage from "../assets/images/contact_image.jpeg";
 
 import { Fade } from "react-reveal";
 
+// import filterWords from "../context/wordFilter";
+import validateEmail from "../context/validateEmail";
+import validateFname from "../context/validateFname";
+
 export default function Contact() {
 
   const [fname, setFname] = React.useState("");
@@ -14,7 +18,7 @@ export default function Contact() {
   const [body, setBody] = React.useState("");
 
   const contactHandler = () => {
-    if (fname && email && subject) {
+    if (validateFname(fname, fname) && validateEmail(email) && subject) {
       setFname("");
       setEmail("");
       setSubject("");
@@ -30,7 +34,7 @@ export default function Contact() {
   }
 
   return (
-    <Layout isVisible={undefined} message={undefined} action={undefined}>
+    <Layout isVisible={undefined} message={undefined} action={undefined} isShowImageViewer={undefined} isClose={undefined} imageTitle={undefined} imageUrl={undefined}>
       <main className={styles.main}>
         <Fade ssrFadeout duration={1200} left>
           <div className={styles.leftContainer}>

@@ -7,7 +7,7 @@ import { Fade } from "react-reveal";
 
 export default function Imprint() {
   return (
-    <Layout isVisible={undefined} message={undefined} action={undefined}>
+    <Layout isVisible={undefined} message={undefined} action={undefined} isShowImageViewer={undefined} isClose={undefined} imageTitle={undefined} imageUrl={undefined}>
       <Fade ssrFadeout duration={420}>
         <main className={styles.main}>
           <section className={styles.heroSection}>

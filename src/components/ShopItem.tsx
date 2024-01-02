@@ -13,8 +13,8 @@ export default function ShopItem() {
   const bestSellers = [
     {
       title: "Eternity", /* use title as id for navigation, get data from db */
-      basePrice: "€130.00",
-      secondPrice: "€370.00",
+      basePrice: "€130",
+      secondPrice: "€370",
       description: "Old Alpine House, Austria. Exclusively limited to a collection of 200 meticulously crafted pieces, each one bearing a unique hand-signed signature, adding a touch of individuality and exclusivity to every item.",
       imageUrl: Eternity,
       categories: [
@@ -90,7 +90,7 @@ export default function ShopItem() {
   }
 
   return (
-    <Layout isVisible={isVisible} message={{ title: `${itemId_normalized} Successfully Added To Cart!`, body: "You can check out your cart by clicking the button below." }} action={{ title: "Go To Cart", link: "/cart" }} isShowImageViewer={undefined} isClose={undefined} image={undefined}>
+    <Layout isVisible={isVisible} message={{ title: `${itemId_normalized} Successfully Added To Cart!`, body: "You can check out your cart by clicking the button below." }} action={{ title: "Go To Cart", link: "/cart" }} isShowImageViewer={undefined} isClose={() => undefined} imageTitle={undefined} imageUrl={undefined}>
       <Fade duration={450} ssrFadeout>
         <main className={styles.main}>
           <section className={styles.productSection}>
@@ -104,7 +104,7 @@ export default function ShopItem() {
                 <div className={styles.openProductTitleContainer}>
                   <text className={styles.openProductTitle}>{itemId_normalized}</text>
                   <text className={styles.openProductSubtitle}>{
-                    (size === bestSellers[0].size[0].value) ? `${(quantity == 0) ? bestSellers[0].basePrice : "€" + (130 * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === bestSellers[0].size[1].value) ? `${(quantity == 0) ? bestSellers[0].secondPrice : "€" + (370 * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === "Size") && `Starting From ${bestSellers[0].basePrice}`
+                    (size === bestSellers[0].size[0].value) ? `${(quantity == 0) ? bestSellers[0].basePrice : "€" + (parseFloat(bestSellers[0].basePrice) * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === bestSellers[0].size[1].value) ? `${(quantity == 0) ? bestSellers[0].secondPrice : "€" + (parseFloat(bestSellers[0].secondPrice) * quantity)} (VAT Incl., Shipping Costs Excl.)` : (size === "Size") && `Starting From ${bestSellers[0].basePrice}` // get values from db
                   }
                   </text>
                   <div className={styles.openProductDescriptionContainer}>
@@ -116,7 +116,7 @@ export default function ShopItem() {
                     <select className={styles.sizeSelect} onChange={handleSizeSelection} id="sizeSelect" value={size}>
                       <option value="Size">Size</option>
                       <option value="60x40">60cm x 40cm</option>
-                      <option value="150x100">150cm x 100cm</option>
+                      <option value="150x100">150cm x 100cm</option> {/* Get values from db */}
                     </select>
                     <IoCaretDown size={25} />
                   </div>

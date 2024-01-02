@@ -3,7 +3,7 @@ import Layout from "../components/layout/Layout";
 
 export default function Portfolio() {
   return (
-    <Layout>
+    <Layout isVisible={undefined} message={undefined} action={undefined} isShowImageViewer={undefined} isClose={undefined} imageTitle={undefined} imageUrl={undefined}>
       <main className={styles.main}>
         <section className={styles.heroSection}>
           <div className={`${styles.row} ${styles.leftRow}`}>

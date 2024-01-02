@@ -27,7 +27,7 @@ export default function Shop() {
   const bestSellers = [
     {
       title: "Eternity", /* use title as id for navigation, get data from db */
-      basePrice: "€130.00",
+      basePrice: "€130",
       imageUrl: Eternity,
       categories: [
         {
@@ -56,8 +56,8 @@ export default function Shop() {
     },
     {
       title: "Mindful Photo Coaching",
-      basePrice: "€288.00",
-      maxPrice: "€288.00",
+      basePrice: "€288",
+      maxPrice: "€288",
       imageUrl: Coaching,
       categories: [
         {
@@ -73,8 +73,8 @@ export default function Shop() {
     },
     {
       title: "Present",
-      basePrice: "€130.00",
-      maxPrice: "€370.00",
+      basePrice: "€130",
+      maxPrice: "€370",
       imageUrl: Muschel,
       categories: [
         {
@@ -116,7 +116,7 @@ export default function Shop() {
   const products = [
     {
       title: "Quality",
-      basePrice: "€130.00",
+      basePrice: "€130",
       maxPrice: "€370.00",
       imageUrl: Elefant,
       categories: [
@@ -295,7 +295,7 @@ export default function Shop() {
   }
 
   return (
-    <Layout isVisible={undefined} message={undefined} action={undefined} isShowImageViewer={isShowImageViewer} isClose={() => setIsShowImageViewer(false)} image={imageProps}>
+    <Layout isVisible={undefined} message={undefined} action={undefined} isShowImageViewer={isShowImageViewer} isClose={() => setIsShowImageViewer(false)} imageUrl={imageProps.url} imageTitle={imageProps.title}>
       <Fade ssrFadeout duration={460}>
         <main className={styles.main}>
           <section className={styles.heroSection}>
