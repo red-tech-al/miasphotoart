@@ -26,7 +26,7 @@ export default function Login() {
         <main className={styles.main}>
           <form className={styles.contactForm}>
             <text className={styles.pageTitle}>Log In</text>
-            <input className={styles.contactFormInput} placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} type="username" />
+            <input className={styles.contactFormInput} placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} type="username" />
             <input className={styles.contactFormInput} placeholder="Your Email Address" value={email} onChange={(e) => setEmail(e.target.value)} type="email" />
             <div className={styles.contactSubmitButton} onClick={contactHandler}>
               <text className={styles.contactSubmitButtonText}>Submit.</text>
