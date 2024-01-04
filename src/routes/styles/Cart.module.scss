@@ -29,6 +29,16 @@
   color: rgb(32, 25, 16);
   cursor: pointer;
   margin-right: 2.275vw;
+  transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+}
+
+.removeIcon:hover {
+  transform: scale(1.035);
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.52);
+}
+
+.removeIcon:active {
+  transform: scale(0.9);
 }
 
 .infoContainer {
@@ -80,6 +90,16 @@
   padding-block: 1vh;
   padding-inline: 2.5vw;
   cursor: pointer;
+  transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+}
+
+.voucherButton:hover {
+  transform: scale(1.035);
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.52);
+}
+
+.voucherButton:active {
+  transform: scale(0.9);
 }
 
 .voucherButtonText,
