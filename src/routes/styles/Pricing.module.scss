@@ -124,6 +124,15 @@
   transition: 1.2s cubic-bezier(0.13, 0.53, 0.38, 0.97);
 }
 
+.ctaButton:hover {
+  transform: scale(1.035);
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.52);
+}
+
+.ctaButton:active {
+  transform: scale(0.9);
+}
+
 .ctaButtonText {
   font-weight: 800;
   font-size: max(0.115em, min(1.15em, calc(100vw * 4 / 75)));

@@ -177,6 +177,19 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+}
+
+.cartButton:hover {
+  transform: scale(1.035);
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.52);
+  .icon {
+    opacity: 1;
+  }
+}
+
+.cartButton:active {
+  transform: scale(0.9);
 }
 
 .cartButtonText {
