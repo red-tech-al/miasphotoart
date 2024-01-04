@@ -7,7 +7,8 @@ import {
   IoClose,
   IoBagHandle,
   IoPersonCircle,
-  IoArrowBack
+  IoArrowBack,
+  IoLockClosed
 } from "react-icons/io5";
 
 import { Fade } from "react-reveal";
@@ -34,6 +35,7 @@ export default function Layout({
     setIsOpenNav(isOpenNav === "true" ? "false" : "true");
   }
 
+  const email: string = "davidguri@yahoo.com";
   const cartItems = 3;
   const loggedIn = false;
   const username = null; // retrieve this data from the database
@@ -42,7 +44,7 @@ export default function Layout({
     <main className={styles.main}>
       <section className={styles.header}>
         {
-          (location.includes("/shop/") || location === "/login" || location === "/cart")
+          (location.includes("/shop/") || location === "/terms" || location === "/login" || location === "/cart")
             ?
             <div className={`${styles.headerContainer} ${styles.backContainer}`} onClick={() => nav(-1)}>
               <IoArrowBack className={styles.headerIcon} />
@@ -52,7 +54,7 @@ export default function Layout({
         }
         <Alert isVisible={isVisible || false} message={message || { title: "", body: "" }} action={action || { title: "", link: "" }} />
         <ImageView show={isShowImageViewer || false} close={isClose || null} image={{ url: imageUrl || "", title: imageTitle || "" }} />
-        <Fade top duration={950} ssrFadeout>
+        <Fade top duration={1000} ssrFadeout>
           <Link to="/cart" style={{ textDecoration: "none", color: "inherit" }}>
             <div className={`${styles.headerContainer} ${styles.cartContainer}`}>
               <IoBagHandle className={styles.headerIcon} />
@@ -60,7 +62,7 @@ export default function Layout({
             </div>
           </Link>
         </Fade>
-        <Fade top duration={750} ssrFadeout>
+        <Fade top duration={850} ssrFadeout>
           <Link to="/login" style={{ textDecoration: "none", color: "inherit" }}>
             <div className={`${styles.headerContainer} ${styles.loginContainer}`}>
               <IoPersonCircle className={styles.headerIcon} />
@@ -69,9 +71,23 @@ export default function Layout({
             </div>
           </Link>
         </Fade>
+        {
+          (email == "davidguri@yahoo.com")
+            ?
+            <Fade top duration={700} ssrFadeout>
+              <Link to="admin/dashboard" style={{ textDecoration: "none", color: "inherit" }}>
+                <div className={`${styles.headerContainer} ${styles.loginContainer}`}>
+                  <IoLockClosed className={styles.headerIcon} />
+                  <text className={styles.headerText}>Admin Panel</text>
+                </div>
+              </Link>
+            </Fade>
+            :
+            <div style={{ display: "none" }}></div>
+        }
       </section>
       {
-        (location.includes("/shop/") || location === "/login" || location === "/cart")
+        (location.includes("/shop/") || location === "/terms" || location === "/login" || location === "/cart")
           ?
           <div style={{ display: "none" }}></div>
           :

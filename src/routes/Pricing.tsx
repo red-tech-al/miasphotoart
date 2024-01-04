@@ -29,7 +29,8 @@ export default function Pricing() {
                   <text className={styles.subtitle}>Starting from €149</text>
                 </div>
                 <text className={styles.body}>
-                  I specialize in crafting captivating portraits, be it outdoors or indoors, each capturing your unique essence. Offering individual image looks, every portrait reflects your distinctive personality. Included with your session is a USB data stick with curated images in web and print resolutions, along with private image rights for your exclusive enjoyment and sharing.
+                  I specialize in capturing cherished moments, crafting lasting joy through relaxed shoots that are perfect for any occasion or as heartfelt gifts, ensuring they resonate deeply with you and your loved ones.<br /><br />
+                  Outdoor portrait sessions with diverse individual image looks, providing a USB containing images in web and print resolutions, and ensuring private image rights for a versatile and personalized collection.
                 </text>
                 <Link to="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className={styles.ctaButton}>
@@ -57,11 +58,11 @@ export default function Pricing() {
             <Fade ssrFadeout duration={1200} right>
               <div className={styles.reverseRightContainer}>
                 <div className={styles.titleContainer}>
-                  <text className={styles.title}>Weddings</text>
+                  <text className={styles.title}>FIX THIS SECTION TO INCLUDE PACKAGES</text>
                   <text className={styles.subtitle}>Starting from €149</text>
                 </div>
                 <text className={styles.body}>
-                  As a wedding photographer, I specialize in capturing precious, fleeting moments that celebrate love and life. I'm there, discreet yet fully immersed, seizing emotions, laughter, and tender touches that weave the story of your special day. These timeless moments are captured for eternity, residing forever in your heart.<br /><br />My services are available year-round for wedding coverage starting at 4 hours in Styria, Carinthia, and across Europe. In our initial meeting, share your wishes and ideas, and I'll craft a personalized offer just for you. Send a non-binding request, and let me make your day truly unforgettable.
+                  As a wedding photographer, I specialize in capturing those fleeting, invaluable moments that define your special day. Discreetly blending into your celebration, I immortalize the emotions, laughter, and tender touches that weave your story. Available year-round for 4-hour wedding reports in Styria, Carinthia, and Europe, I welcome an introductory meeting to create a personalized offer, ensuring YOUR DAY becomes an unforgettable memory.<br /><br />My services are available year-round for wedding coverage starting at 4 hours in Styria, Carinthia, and across Europe. In our initial meeting, share your wishes and ideas, and I'll craft a personalized offer just for you. Send a non-binding request, and let me make your day truly unforgettable.
                 </text>
                 <Link to="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className={styles.ctaButton}>
@@ -75,7 +76,7 @@ export default function Pricing() {
             <Fade ssrFadeout duration={1200} left>
               <div className={styles.leftContainer}>
                 <div className={styles.titleContainer}>
-                  <text className={styles.title}>Personal<br />Coaching</text>
+                  <text className={styles.title}>FIX THIS SECTION TO INCLUDE PACKAGES</text>
                   <text className={styles.subtitle}>Starting from €149</text>
                 </div>
                 <text className={styles.body}>
