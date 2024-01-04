@@ -10,6 +10,8 @@ import Eternity from "../assets/images/product_images/eternity.jpeg";
 
 export default function ShopItem() {
 
+  const [isShowImageViewer, setIsShowImageViewer] = React.useState(false);
+
   const bestSellers = [
     {
       title: "Eternity", /* use title as id for navigation, get data from db */
@@ -90,13 +92,13 @@ export default function ShopItem() {
   }
 
   return (
-    <Layout isVisible={isVisible} message={{ title: `${itemId_normalized} Successfully Added To Cart!`, body: "You can check out your cart by clicking the button below." }} action={{ title: "Go To Cart", link: "/cart" }} isShowImageViewer={undefined} isClose={() => undefined} imageTitle={undefined} imageUrl={undefined}>
+    <Layout isVisible={isVisible} message={{ title: `${itemId_normalized} Successfully Added To Cart!`, body: "You can check out your cart by clicking the button below." }} action={{ title: "Go To Cart", link: "/cart" }} isShowImageViewer={isShowImageViewer} isClose={() => setIsShowImageViewer(false)} imageUrl={Eternity} imageTitle={itemId_normalized}>
       <Fade duration={450} ssrFadeout>
         <main className={styles.main}>
           <section className={styles.productSection}>
             <Fade ssrFadeout left duration={1200}>
               <div className={styles.openProductLeftContainer}>
-                <div className={styles.openProductImage} style={{ backgroundImage: `url(${Eternity})` }} onClick={() => { }} />
+                <div className={styles.openProductImage} style={{ backgroundImage: `url(${Eternity})` }} onClick={() => setIsShowImageViewer(true)} />
               </div>
             </Fade>
             <Fade ssrFadeout right duration={1200}>

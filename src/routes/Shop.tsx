@@ -88,7 +88,7 @@ export default function Shop() {
         },
       ]
     },
-  ]
+  ] // get values from db
 
   const Product = (props: any) => {
 
@@ -268,7 +268,7 @@ export default function Shop() {
         },
       ]
     },
-  ]
+  ] // get values from db
 
   const [quantity, setQuantity] = React.useState(0);
   const [size, setSize] = React.useState("Size");
