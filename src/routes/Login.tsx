@@ -9,12 +9,12 @@ import validateFname from "../context/validateFname";
 
 export default function Login() {
 
-  const [fname, setFname] = React.useState("");
+  const [username, setUsername] = React.useState("");
   const [email, setEmail] = React.useState("");
 
   const contactHandler = () => {
-    if (validateFname(fname, fname) && validateEmail(email)) {
-      setFname("");
+    if (validateFname(username, username) && validateEmail(email)) {
+      setUsername("");
       setEmail("");
     }
     // upload this data to the database, and save for later use.
@@ -26,7 +26,7 @@ export default function Login() {
         <main className={styles.main}>
           <form className={styles.contactForm}>
             <text className={styles.pageTitle}>Log In</text>
-            <input className={styles.contactFormInput} placeholder="Your Full Name" value={fname} onChange={(e) => setFname(e.target.value)} type="name" />
+            <input className={styles.contactFormInput} placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} type="username" />
             <input className={styles.contactFormInput} placeholder="Your Email Address" value={email} onChange={(e) => setEmail(e.target.value)} type="email" />
             <div className={styles.contactSubmitButton} onClick={contactHandler}>
               <text className={styles.contactSubmitButtonText}>Submit.</text>
