@@ -21,6 +21,9 @@ import About from './routes/About';
 import Imprint from './routes/Imprint';
 import Terms from './routes/Terms';
 
+import AdminProtected from './admin/context/AdminProtected';
+import Dashboard from './admin/routes/Dashboard';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -75,6 +78,14 @@ const router = createBrowserRouter([
   {
     path: "/terms",
     element: <Terms />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/admin/dashboard",
+    element:
+      <AdminProtected>
+        <Dashboard />
+      </AdminProtected>,
     errorElement: <ErrorPage />,
   },
 ]);
