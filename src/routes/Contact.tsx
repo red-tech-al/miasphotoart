@@ -56,7 +56,9 @@ export default function Contact() {
               <div className={styles.innerCard}>
                 <img alt='contact' src={ContactImage} className={styles.image} onClick={handleFlip} /> {/* TODO: Fix this onMouseOver event onMouseOver={handleFlip} */}
                 <div className={styles.backCard} onClick={handleFlip} >
-                  <text className={styles.backCardText}><i>Don't shoot what it looks like. Shoot what it feels like.</i></text>
+                  <text className={styles.backCardText}>
+                    <i>Don't shoot what it looks like. Shoot what it feels like.</i>
+                  </text>
                   <text className={styles.backCardText} style={{ fontWeight: "800" }}>- David Alan Harvey</text>
                 </div>
               </div>
@@ -64,16 +66,40 @@ export default function Contact() {
             <div className={styles.bottomContainer}>
               <Fade ssrFadeout duration={1000} bottom>
                 <div className={styles.officeLocation}>
-                  <text className={styles.officeLocationText}>Graz - Head Office</text>
-                  <text className={styles.contactDetails}><span className={styles.bold}>Email:</span> <a href="mailto:info@miasphotoart.at" style={{ color: "inherit" }}><i>info@miasphotoart.at</i></a></text>
-                  <text className={styles.contactDetails}><span className={styles.bold}>Phone:</span> <a href="tel:+43 664 2072501" style={{ color: "inherit" }}><i>+43 664 2072501</i></a></text>
+                  <text className={styles.officeLocationText}>
+                    Graz - Head Office
+                  </text>
+                  <text className={styles.contactDetails}>
+                    <span className={styles.bold}>Email: </span>
+                    <a href="mailto:info@miasphotoart.at" style={{ color: "inherit" }}>
+                      <i>info@miasphotoart.at</i>
+                    </a>
+                  </text>
+                  <text className={styles.contactDetails}>
+                    <span className={styles.bold}>Phone: </span>
+                    <a href="tel:+43 664 2072501" style={{ color: "inherit" }}>
+                      <i>+43 664 2072501</i>
+                    </a>
+                  </text>
                 </div>
               </Fade>
               <Fade ssrFadeout duration={1600} bottom>
                 <div className={styles.officeLocation} style={{ textAlign: "right", alignItems: "flex-end" }}>
-                  <text className={styles.officeLocationText}>Klagenfurt</text>
-                  <text className={styles.contactDetails}><span className={styles.bold}>Email:</span> <a href="mailto:klagenfurt@miasphotoart.at" style={{ color: "inherit" }}><i>klagenfurt@miasphotoart.at</i></a></text>
-                  <text className={styles.contactDetails}><span className={styles.bold}>Phone:</span> <a href="tel:+43 664 2072501" style={{ color: "inherit" }}><i>+43 664 2072501</i></a></text>
+                  <text className={styles.officeLocationText}>
+                    Klagenfurt
+                  </text>
+                  <text className={styles.contactDetails}>
+                    <span className={styles.bold}>Email: </span>
+                    <a href="mailto:klagenfurt@miasphotoart.at" style={{ color: "inherit" }}>
+                      <i>klagenfurt@miasphotoart.at</i>
+                    </a>
+                  </text>
+                  <text className={styles.contactDetails}>
+                    <span className={styles.bold}>Phone: </span>
+                    <a href="tel:+43 664 2072501" style={{ color: "inherit" }}>
+                      <i>+43 664 2072501</i>
+                    </a>
+                  </text>
                 </div>
               </Fade>
             </div>

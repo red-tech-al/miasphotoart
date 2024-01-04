@@ -4,13 +4,16 @@ import Layout from "../components/layout/Layout";
 
 import { Fade } from "react-reveal";
 
+import validateEmail from "../context/validateEmail";
+import validateFname from "../context/validateFname";
+
 export default function Login() {
 
   const [fname, setFname] = React.useState("");
   const [email, setEmail] = React.useState("");
 
   const contactHandler = () => {
-    if (fname && email) {
+    if (validateFname(fname, fname) && validateEmail(email)) {
       setFname("");
       setEmail("");
     }
