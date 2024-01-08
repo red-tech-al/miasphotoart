@@ -138,7 +138,7 @@ export default function Layout({
           <section className={styles.footer}>
             <Fade left duration={750}>
               <div className={styles.footerLeftContainer}>
-                <text className={styles.copyrightText}>© Copyright Mias Photoart</text>
+                <text className={styles.copyrightText}>© Copyright Mias Photoart, Made With ❤️ By RED Tech.</text>
               </div>
             </Fade>
             <Fade right duration={750}>
