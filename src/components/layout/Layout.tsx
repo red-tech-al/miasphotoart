@@ -75,7 +75,7 @@ export default function Layout({
           (email == "davidguri@yahoo.com")
             ?
             <Fade top duration={700} ssrFadeout>
-              <Link to="admin/dashboard" style={{ textDecoration: "none", color: "inherit" }}>
+              <Link to="/admin/dashboard" style={{ textDecoration: "none", color: "inherit" }}>
                 <div className={`${styles.headerContainer} ${styles.loginContainer}`}>
                   <IoLockClosed className={styles.headerIcon} />
                   <text className={styles.headerText}>Admin Panel</text>
