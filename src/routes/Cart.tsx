@@ -5,7 +5,7 @@ import { Fade } from "react-reveal";
 
 import CartView from "../components/CartView";
 
-import { IoCloseCircle } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 
 import Eternity from "../assets/images/product_images/eternity.jpeg";
 import Coaching from "../assets/images/product_images/photo-coaching.jpeg";
@@ -94,7 +94,7 @@ export default function Cart() {
                 return (
                   <div className={styles.cartRow}>
                     <div className={styles.removeContainer}>
-                      <IoCloseCircle className={styles.removeIcon} onClick={() => { }} />
+                      <IoClose className={styles.removeIcon} onClick={() => { }} />
                     </div>
                     <CartView key={i} title={bestSeller.title} imageUrl={bestSeller.imageUrl} description="lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum." price={bestSeller.basePrice} />
                   </div>

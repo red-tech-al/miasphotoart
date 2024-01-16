@@ -25,8 +25,11 @@
 }
 
 .removeIcon {
-  font-size: max(0.275em, min(2.75em, calc(100vw * 4 / 75)));
-  color: rgb(32, 25, 16);
+  font-size: max(0.175em, min(1.75em, calc(100vw * 4 / 75)));
+  color: rgb(241, 235, 223);
+  background-color: rgb(32, 25, 16);
+  padding: 0.6vw;
+  border-radius: 50px;
   cursor: pointer;
   margin-right: 2.275vw;
   transition: 700ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
@@ -34,7 +37,7 @@
 
 .removeIcon:hover {
   transform: scale(1.035);
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.52);
+  filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.52));
 }
 
 .removeIcon:active {
